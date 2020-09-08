@@ -56,15 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\Entity Framework\CarteleriaDigitalContext.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioBanner.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioCampaña.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioFuenteRss.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioGeneral.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioImagen.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioRssUrl.cs" />
-    <Compile Include="DAL\Entity Framework\RepositorioTextoFijo.cs" />
-    <Compile Include="DAL\Entity Framework\UnidadDeTrabajo.cs" />
+    <Compile Include="Controladores\ControladorCampaña.cs" />
+    <Compile Include="Controladores\ControladorImagen.cs" />
+    <Compile Include="DAL\EntityFramework\CarteleriaDigitalContext.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioBanner.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioCampaña.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioFuenteRss.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioGeneral.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioImagen.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioRssUrl.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioTextoFijo.cs" />
+    <Compile Include="DAL\EntityFramework\UnidadDeTrabajo.cs" />
     <Compile Include="DAL\IRepositorioBanner.cs" />
     <Compile Include="DAL\IRepositorioCampaña.cs" />
     <Compile Include="DAL\IRepositorioFuenteRssUrl.cs" />
@@ -73,11 +75,35 @@
     <Compile Include="DAL\IRepositorioRssUrl.cs" />
     <Compile Include="DAL\IRepositorioTextoFijo.cs" />
     <Compile Include="DAL\IUnidadDeTrabajo.cs" />
-    <Compile Include="Vistas\Form1.cs">
+    <Compile Include="Excepciones\ExcepcionControlFechas.cs" />
+    <Compile Include="Excepciones\ExisteNombre.cs" />
+    <Compile Include="Excepciones\FaltanDatosObligatorios.cs" />
+    <Compile Include="Migrations\202009070509456_Inici.cs" />
+    <Compile Include="Migrations\202009070509456_Inici.designer.cs">
+      <DependentUpon>202009070509456_Inici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009070523042_Inicio.cs" />
+    <Compile Include="Migrations\202009070523042_Inicio.designer.cs">
+      <DependentUpon>202009070523042_Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Vistas\GestionBanner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vistas\GestionBanner.Designer.cs">
+      <DependentUpon>GestionBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\GestionCampaña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\GestionCampaña.Designer.cs">
+      <DependentUpon>GestionCampaña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MenuPrincipa%3b.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\MenuPrincipa%3b.Designer.cs">
+      <DependentUpon>MenuPrincipa%3b.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Banner.cs" />
     <Compile Include="Modelo\Campaña.cs" />
@@ -87,6 +113,12 @@
     <Compile Include="Modelo\TextoFijo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Migrations\202009070509456_Inici.resx">
+      <DependentUpon>202009070509456_Inici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009070523042_Inicio.resx">
+      <DependentUpon>202009070523042_Inicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,7 +127,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\GestionCampaña.resx">
+      <DependentUpon>GestionCampaña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\MenuPrincipa%3b.resx">
+      <DependentUpon>MenuPrincipa%3b.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,8 +149,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Controladores\" />
+    <None Include="Iconos\+Imagen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

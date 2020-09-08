@@ -9,7 +9,7 @@ namespace CarteleriaDigital.DAL
 {
     interface IRepositorioImagen : IRepositorioGeneral<Imagen>
     {
-        //IList<Imagen> ObtenerTodasLasImagensDeLaCampaña(int pidCampaña);
+        IList<Imagen> ObtenerTodasLasImagensDeLaCampaña(int pidCampaña);
     }
 
 }
