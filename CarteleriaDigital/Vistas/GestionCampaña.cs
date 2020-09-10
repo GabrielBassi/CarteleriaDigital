@@ -11,6 +11,7 @@ using CarteleriaDigital.Excepciones;
 using CarteleriaDigital.Controladores;
 using CarteleriaDigital.DAL.EntityFramework;
 using CarteleriaDigital.Modelo;
+using CarteleriaDigital.Control;
 
 
 namespace CarteleriaDigital.Vistas
@@ -20,6 +21,7 @@ namespace CarteleriaDigital.Vistas
         ControladorCampaña iControladorCampaña;
         ControladorImagen iControladorImagen;
         Campaña mCampañaMod;
+        Controles iControl;
         IList<Imagen> listaImagenes = new List<Imagen>();
         IList<Imagen> listaImagenesMod = new List<Imagen>();
         int aa = 20;
@@ -32,6 +34,8 @@ namespace CarteleriaDigital.Vistas
             InitializeComponent();
             iControladorCampaña = new ControladorCampaña(UnidadDeTrabajo.Instancia);
             iControladorImagen = new ControladorImagen(UnidadDeTrabajo.Instancia, aa, jj);
+            iControl = new Controles();
+
         }
 
         private void TbCtrlAgregar_Click(object sender, EventArgs e)
@@ -62,16 +66,18 @@ namespace CarteleriaDigital.Vistas
                 DateTime pFechaFin = new DateTime(this.dTPickFechaHasta.Value.Year, this.dTPickFechaHasta.Value.Month, this.dTPickFechaHasta.Value.Day, Convert.ToInt32(this.nUpHastaHoraAgregar.Text), 0, 0);
                 int pHoraInicio = Convert.ToInt32(nUpDesdeHoraAgregar.Value);
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraAgregar.Value); ;
-                iControladorCampaña.ValidarFecha(pFechaInicio, pFechaFin);
-                iControladorCampaña.ValidarHora(pHoraInicio, pHoraFin);
+                iControl.ValidarFecha(pFechaInicio, pFechaFin);
+                iControl.ValidarHora(pHoraInicio, pHoraFin);
 
 
                 if (listaImagenes.Count == 0)
                 {
                     throw new FaltanDatosObligatorios("Faltar Cargar Imágenes a la Campaña");
                 }
+
+                //Revisar estos parámetros
                 iControladorCampaña.AgregarCampaña(txBoxNombreAgregarCamp.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionAgregar.Text), listaImagenes);
-                MessageBox.Show("Registro Correcto", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La campaña se registro con exito", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 contador = 0; ///
                 LimpiarPantallaAlta();
 
@@ -142,16 +148,18 @@ namespace CarteleriaDigital.Vistas
         {
             dTPickFechaDesde.Value = DateTime.Today;
             dTPickFechaHasta.Value = DateTime.Today;
+            dTPickFechaDesdeMod.Value = DateTime.Today;
+            dTPickFechaHastaMod.Value = DateTime.Today;
             iControladorCampaña.CargarCampañasActivasComboBox(cBoxModCampActivas);
         }
 
         private void TabControl1_TabIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 0)
+            if (tabCampaña.SelectedIndex == 0)
             {
                 LimpiarPantallaAlta();
             }
-            else if (tabControl1.SelectedIndex == 1)
+            else if (tabCampaña.SelectedIndex == 1)
             {
                 LimpiarPantallaMod();
             }
@@ -202,8 +210,8 @@ namespace CarteleriaDigital.Vistas
                 DateTime pFechaFin = new DateTime(this.dTPickFechaHastaMod.Value.Year, this.dTPickFechaHastaMod.Value.Month, this.dTPickFechaHastaMod.Value.Day, Convert.ToInt32(this.nUpHastaHoraMod.Text), 0, 0);
                 int pHoraInicio = Convert.ToInt32(nUpDesdeHoraMod.Value);
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraMod.Value);
-                iControladorCampaña.ValidarFecha(pFechaInicio, pFechaFin);
-                iControladorCampaña.ValidarHora(pHoraInicio, pHoraFin);
+                iControl.ValidarFecha(pFechaInicio, pFechaFin);
+                iControl.ValidarHora(pHoraInicio, pHoraFin);
                 if (control == true)
                 {
                     iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), listaImagenesMod);

@@ -26,12 +26,13 @@ namespace CarteleriaDigital.Controladores
         /// <summary>
         /// Se agrega una nueva campaña al repositorio
         /// </summary>
+        /// <param name="pNombre"></param>
         /// <param name="pFechaFin"></param>
         /// <param name="pFechaInicio"></param>
         /// <param name="pHoraFin"></param>
         /// <param name="pHoraInicio"></param>
         /// <param name="pDuracion"></param>
-        /// <param name="pNombre"></param>
+
         public void AgregarCampaña(string pNombre, DateTime pFechaInicio, DateTime pFechaFin, TimeSpan pHoraInicio, TimeSpan pHoraFin, int pDuracion, IList<Imagen> pListaImagen)
         {
             Campaña iCampaña = new Campaña()
@@ -60,34 +61,6 @@ namespace CarteleriaDigital.Controladores
             else
             {
                 return existencia;
-            }
-
-
-        }
-
-        /// <summary>
-        /// Método para validar la fecha de inicio y fin de una campaña
-        /// </summary>
-        /// <param name="pFechaInicio"></param>
-        /// <param name="pFechaFin"></param>
-        public void ValidarFecha(DateTime pFechaInicio, DateTime pFechaFin)
-        {
-            if (pFechaInicio > pFechaFin)
-            {
-                throw new ExcepcionControlFechas("La fecha de fin debe ser mayor o igual a la fecha de inicio");
-            }
-        }
-
-        /// <summary>
-        /// M[etodo para validar hira de inicio y fin de una campaña
-        /// </summary>
-        /// <param name="pHoraInicio"></param>
-        /// <param name="pHoraFin"></param>
-        public void ValidarHora(int pHoraInicio, int pHoraFin)
-        {
-            if (pHoraInicio >= pHoraFin)
-            {
-                throw new ExcepcionControlFechas("La hora de fin debe ser mayor la hora de inicio");
             }
         }
 

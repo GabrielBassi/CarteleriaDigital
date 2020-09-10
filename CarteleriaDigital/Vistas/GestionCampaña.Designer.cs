@@ -27,11 +27,10 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabCampaña = new System.Windows.Forms.TabControl();
             this.tbCtrlAgregar = new System.Windows.Forms.TabPage();
             this.btnAceptarCampaña = new System.Windows.Forms.Button();
             this.gBoxInfoCampaña = new System.Windows.Forms.GroupBox();
-            this.CargarImag = new System.Windows.Forms.Button();
             this.nUDuracionAgregar = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.nUpHastaHoraAgregar = new System.Windows.Forms.NumericUpDown();
@@ -56,7 +55,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.gBoxCampañaMod = new System.Windows.Forms.GroupBox();
-            this.CargarImagMod = new System.Windows.Forms.Button();
             this.nUDuracionMod = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.nUpHastaHoraMod = new System.Windows.Forms.NumericUpDown();
@@ -73,7 +71,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cBoxModCampActivas = new System.Windows.Forms.ComboBox();
             this.lblModCampañasAct = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.CargarImag = new System.Windows.Forms.Button();
+            this.CargarImagMod = new System.Windows.Forms.Button();
+            this.tabCampaña.SuspendLayout();
             this.tbCtrlAgregar.SuspendLayout();
             this.gBoxInfoCampaña.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDuracionAgregar)).BeginInit();
@@ -87,16 +87,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraMod)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabCampaña
             // 
-            this.tabControl1.Controls.Add(this.tbCtrlAgregar);
-            this.tabControl1.Controls.Add(this.tbControlModificar);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1046, 763);
-            this.tabControl1.TabIndex = 0;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.TabControl1_TabIndexChanged);
+            this.tabCampaña.Controls.Add(this.tbCtrlAgregar);
+            this.tabCampaña.Controls.Add(this.tbControlModificar);
+            this.tabCampaña.Location = new System.Drawing.Point(5, 1);
+            this.tabCampaña.Name = "tabCampaña";
+            this.tabCampaña.SelectedIndex = 0;
+            this.tabCampaña.Size = new System.Drawing.Size(1048, 760);
+            this.tabCampaña.TabIndex = 0;
+            this.tabCampaña.SelectedIndexChanged += new System.EventHandler(this.TabControl1_TabIndexChanged);
             // 
             // tbCtrlAgregar
             // 
@@ -107,7 +107,7 @@
             this.tbCtrlAgregar.Location = new System.Drawing.Point(4, 25);
             this.tbCtrlAgregar.Name = "tbCtrlAgregar";
             this.tbCtrlAgregar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCtrlAgregar.Size = new System.Drawing.Size(1038, 734);
+            this.tbCtrlAgregar.Size = new System.Drawing.Size(1040, 731);
             this.tbCtrlAgregar.TabIndex = 0;
             this.tbCtrlAgregar.Text = "Agregar";
             this.tbCtrlAgregar.UseVisualStyleBackColor = true;
@@ -146,16 +146,6 @@
             this.gBoxInfoCampaña.TabIndex = 0;
             this.gBoxInfoCampaña.TabStop = false;
             this.gBoxInfoCampaña.Text = "Información de campaña";
-            // 
-            // CargarImag
-            // 
-            this.CargarImag.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
-            this.CargarImag.Location = new System.Drawing.Point(938, 21);
-            this.CargarImag.Name = "CargarImag";
-            this.CargarImag.Size = new System.Drawing.Size(60, 60);
-            this.CargarImag.TabIndex = 19;
-            this.CargarImag.UseVisualStyleBackColor = true;
-            this.CargarImag.Click += new System.EventHandler(this.CargarImag_Click);
             // 
             // nUDuracionAgregar
             // 
@@ -270,10 +260,11 @@
             this.dTPickFechaHasta.Name = "dTPickFechaHasta";
             this.dTPickFechaHasta.Size = new System.Drawing.Size(113, 22);
             this.dTPickFechaHasta.TabIndex = 10;
-            this.dTPickFechaHasta.Value = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
+            this.dTPickFechaHasta.Value = new System.DateTime(2020, 9, 10, 0, 0, 0, 0);
             // 
             // dTPickFechaDesde
             // 
+            this.dTPickFechaDesde.Checked = false;
             this.dTPickFechaDesde.CustomFormat = "dd/MM/yyyy";
             this.dTPickFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTPickFechaDesde.Location = new System.Drawing.Point(464, 79);
@@ -281,7 +272,7 @@
             this.dTPickFechaDesde.Name = "dTPickFechaDesde";
             this.dTPickFechaDesde.Size = new System.Drawing.Size(113, 22);
             this.dTPickFechaDesde.TabIndex = 9;
-            this.dTPickFechaDesde.Value = new System.DateTime(2020, 8, 19, 0, 0, 0, 0);
+            this.dTPickFechaDesde.Value = new System.DateTime(2020, 9, 10, 0, 0, 0, 0);
             // 
             // lblHastaFechaAgregar
             // 
@@ -348,7 +339,7 @@
             this.tbControlModificar.Location = new System.Drawing.Point(4, 25);
             this.tbControlModificar.Name = "tbControlModificar";
             this.tbControlModificar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbControlModificar.Size = new System.Drawing.Size(1038, 734);
+            this.tbControlModificar.Size = new System.Drawing.Size(1040, 731);
             this.tbControlModificar.TabIndex = 1;
             this.tbControlModificar.Text = "Modificar";
             this.tbControlModificar.UseVisualStyleBackColor = true;
@@ -438,16 +429,6 @@
             this.gBoxCampañaMod.TabStop = false;
             this.gBoxCampañaMod.Text = "Campañas";
             // 
-            // CargarImagMod
-            // 
-            this.CargarImagMod.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
-            this.CargarImagMod.Location = new System.Drawing.Point(938, 21);
-            this.CargarImagMod.Name = "CargarImagMod";
-            this.CargarImagMod.Size = new System.Drawing.Size(60, 60);
-            this.CargarImagMod.TabIndex = 22;
-            this.CargarImagMod.UseVisualStyleBackColor = true;
-            this.CargarImagMod.Click += new System.EventHandler(this.CargarImagMod_Click);
-            // 
             // nUDuracionMod
             // 
             this.nUDuracionMod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -515,7 +496,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(768, 121);
+            this.label3.Location = new System.Drawing.Point(780, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 17);
             this.label3.TabIndex = 28;
@@ -524,7 +505,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(768, 87);
+            this.label4.Location = new System.Drawing.Point(780, 85);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 17);
             this.label4.TabIndex = 27;
@@ -556,10 +537,11 @@
             this.dTPickFechaHastaMod.Name = "dTPickFechaHastaMod";
             this.dTPickFechaHastaMod.Size = new System.Drawing.Size(113, 22);
             this.dTPickFechaHastaMod.TabIndex = 24;
-            this.dTPickFechaHastaMod.Value = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
+            this.dTPickFechaHastaMod.Value = new System.DateTime(2020, 9, 10, 0, 0, 0, 0);
             // 
             // dTPickFechaDesdeMod
             // 
+            this.dTPickFechaDesdeMod.Checked = false;
             this.dTPickFechaDesdeMod.CustomFormat = "dd/MM/yyyy";
             this.dTPickFechaDesdeMod.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dTPickFechaDesdeMod.Location = new System.Drawing.Point(618, 82);
@@ -567,7 +549,7 @@
             this.dTPickFechaDesdeMod.Name = "dTPickFechaDesdeMod";
             this.dTPickFechaDesdeMod.Size = new System.Drawing.Size(113, 22);
             this.dTPickFechaDesdeMod.TabIndex = 23;
-            this.dTPickFechaDesdeMod.Value = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
+            this.dTPickFechaDesdeMod.Value = new System.DateTime(2020, 9, 10, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -624,16 +606,36 @@
             this.lblModCampañasAct.TabIndex = 0;
             this.lblModCampañasAct.Text = "Campañas activas del día";
             // 
+            // CargarImag
+            // 
+            this.CargarImag.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
+            this.CargarImag.Location = new System.Drawing.Point(938, 21);
+            this.CargarImag.Name = "CargarImag";
+            this.CargarImag.Size = new System.Drawing.Size(60, 60);
+            this.CargarImag.TabIndex = 19;
+            this.CargarImag.UseVisualStyleBackColor = true;
+            this.CargarImag.Click += new System.EventHandler(this.CargarImag_Click);
+            // 
+            // CargarImagMod
+            // 
+            this.CargarImagMod.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
+            this.CargarImagMod.Location = new System.Drawing.Point(938, 21);
+            this.CargarImagMod.Name = "CargarImagMod";
+            this.CargarImagMod.Size = new System.Drawing.Size(60, 60);
+            this.CargarImagMod.TabIndex = 22;
+            this.CargarImagMod.UseVisualStyleBackColor = true;
+            this.CargarImagMod.Click += new System.EventHandler(this.CargarImagMod_Click);
+            // 
             // GestionCampaña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 773);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabCampaña);
             this.Name = "GestionCampaña";
             this.Text = "GestiónCampaña";
             this.Load += new System.EventHandler(this.GestionCampaña_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabCampaña.ResumeLayout(false);
             this.tbCtrlAgregar.ResumeLayout(false);
             this.gBoxInfoCampaña.ResumeLayout(false);
             this.gBoxInfoCampaña.PerformLayout();
@@ -653,7 +655,7 @@
 
     #endregion
 
-    private System.Windows.Forms.TabControl tabControl1;
+    private System.Windows.Forms.TabControl tabCampaña;
     private System.Windows.Forms.TabPage tbCtrlAgregar;
     private System.Windows.Forms.TabPage tbControlModificar;
     private System.Windows.Forms.GroupBox gBoxInfoCampaña;

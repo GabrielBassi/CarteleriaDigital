@@ -31,3 +31,6 @@ C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaD
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.pdb
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.Inicio.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionCampaña.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionBanner.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations._432.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations._987.resources

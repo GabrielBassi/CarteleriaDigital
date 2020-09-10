@@ -28,12 +28,555 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.tabCtrlBanner = new System.Windows.Forms.TabControl();
+            this.tabAgregarBanner = new System.Windows.Forms.TabPage();
+            this.btnAceptarBanner = new System.Windows.Forms.Button();
+            this.BtnVolverBanner = new System.Windows.Forms.Button();
+            this.gBoxAgregarBanner = new System.Windows.Forms.GroupBox();
+            this.cBoxFuenteDatosAgregBanner = new System.Windows.Forms.ComboBox();
+            this.lblFuenteDatos = new System.Windows.Forms.Label();
+            this.nUpHastaHoraAgregarBan = new System.Windows.Forms.NumericUpDown();
+            this.nUpDesdeHoraAgregarBan = new System.Windows.Forms.NumericUpDown();
+            this.lblHastaHoraAgregar = new System.Windows.Forms.Label();
+            this.lblDesdeHoraAgregar = new System.Windows.Forms.Label();
+            this.lblRangoHorasAgregar = new System.Windows.Forms.Label();
+            this.dTPickFechaHastaBan = new System.Windows.Forms.DateTimePicker();
+            this.dTPickFechaDesdeBan = new System.Windows.Forms.DateTimePicker();
+            this.lblHastaFechaAgregar = new System.Windows.Forms.Label();
+            this.lblDesdeFechaAgregar = new System.Windows.Forms.Label();
+            this.lblEntreFechasAgregar = new System.Windows.Forms.Label();
+            this.lblNomBanner = new System.Windows.Forms.Label();
+            this.txtNomAgregarBanner = new System.Windows.Forms.TextBox();
+            this.tabModBanner = new System.Windows.Forms.TabPage();
+            this.btnModificarBanner = new System.Windows.Forms.Button();
+            this.btnModVolverBanner = new System.Windows.Forms.Button();
+            this.btnModEliminarBanner = new System.Windows.Forms.Button();
+            this.gBoxModBanner = new System.Windows.Forms.GroupBox();
+            this.cBoxFuenteModBanner = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtNomBannerMod = new System.Windows.Forms.TextBox();
+            this.cboxBuscarBannerMod = new System.Windows.Forms.ComboBox();
+            this.lblNombreBannerMod = new System.Windows.Forms.Label();
+            this.lblBuscarNombre = new System.Windows.Forms.Label();
+            this.nUpHastaHoraModBan = new System.Windows.Forms.NumericUpDown();
+            this.nUpDesdeHoraModBan = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dTPickFechaHastaModBan = new System.Windows.Forms.DateTimePicker();
+            this.dTPickFechaDesdeModBan = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabCtrlBanner.SuspendLayout();
+            this.tabAgregarBanner.SuspendLayout();
+            this.gBoxAgregarBanner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraAgregarBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraAgregarBan)).BeginInit();
+            this.tabModBanner.SuspendLayout();
+            this.gBoxModBanner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraModBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraModBan)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tabCtrlBanner
+            // 
+            this.tabCtrlBanner.Controls.Add(this.tabAgregarBanner);
+            this.tabCtrlBanner.Controls.Add(this.tabModBanner);
+            this.tabCtrlBanner.Location = new System.Drawing.Point(1, 1);
+            this.tabCtrlBanner.Name = "tabCtrlBanner";
+            this.tabCtrlBanner.SelectedIndex = 0;
+            this.tabCtrlBanner.Size = new System.Drawing.Size(803, 373);
+            this.tabCtrlBanner.TabIndex = 0;
+            this.tabCtrlBanner.SelectedIndexChanged += new System.EventHandler(this.tabCtrlBanner_TabIndexChanged);
+            // 
+            // tabAgregarBanner
+            // 
+            this.tabAgregarBanner.Controls.Add(this.btnAceptarBanner);
+            this.tabAgregarBanner.Controls.Add(this.BtnVolverBanner);
+            this.tabAgregarBanner.Controls.Add(this.gBoxAgregarBanner);
+            this.tabAgregarBanner.Location = new System.Drawing.Point(4, 25);
+            this.tabAgregarBanner.Name = "tabAgregarBanner";
+            this.tabAgregarBanner.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAgregarBanner.Size = new System.Drawing.Size(795, 344);
+            this.tabAgregarBanner.TabIndex = 0;
+            this.tabAgregarBanner.Text = "Agregar";
+            this.tabAgregarBanner.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptarBanner
+            // 
+            this.btnAceptarBanner.Location = new System.Drawing.Point(179, 273);
+            this.btnAceptarBanner.Name = "btnAceptarBanner";
+            this.btnAceptarBanner.Size = new System.Drawing.Size(110, 50);
+            this.btnAceptarBanner.TabIndex = 23;
+            this.btnAceptarBanner.Text = "Aceptar";
+            this.btnAceptarBanner.UseVisualStyleBackColor = true;
+            this.btnAceptarBanner.Click += new System.EventHandler(this.btnAceptarBanner_Click);
+            // 
+            // BtnVolverBanner
+            // 
+            this.BtnVolverBanner.Location = new System.Drawing.Point(492, 273);
+            this.BtnVolverBanner.Name = "BtnVolverBanner";
+            this.BtnVolverBanner.Size = new System.Drawing.Size(110, 50);
+            this.BtnVolverBanner.TabIndex = 22;
+            this.BtnVolverBanner.Text = "Volver";
+            this.BtnVolverBanner.UseVisualStyleBackColor = true;
+            this.BtnVolverBanner.Click += new System.EventHandler(this.BtnVolverBanner_Click);
+            // 
+            // gBoxAgregarBanner
+            // 
+            this.gBoxAgregarBanner.Controls.Add(this.cBoxFuenteDatosAgregBanner);
+            this.gBoxAgregarBanner.Controls.Add(this.lblFuenteDatos);
+            this.gBoxAgregarBanner.Controls.Add(this.nUpHastaHoraAgregarBan);
+            this.gBoxAgregarBanner.Controls.Add(this.nUpDesdeHoraAgregarBan);
+            this.gBoxAgregarBanner.Controls.Add(this.lblHastaHoraAgregar);
+            this.gBoxAgregarBanner.Controls.Add(this.lblDesdeHoraAgregar);
+            this.gBoxAgregarBanner.Controls.Add(this.lblRangoHorasAgregar);
+            this.gBoxAgregarBanner.Controls.Add(this.dTPickFechaHastaBan);
+            this.gBoxAgregarBanner.Controls.Add(this.dTPickFechaDesdeBan);
+            this.gBoxAgregarBanner.Controls.Add(this.lblHastaFechaAgregar);
+            this.gBoxAgregarBanner.Controls.Add(this.lblDesdeFechaAgregar);
+            this.gBoxAgregarBanner.Controls.Add(this.lblEntreFechasAgregar);
+            this.gBoxAgregarBanner.Controls.Add(this.lblNomBanner);
+            this.gBoxAgregarBanner.Controls.Add(this.txtNomAgregarBanner);
+            this.gBoxAgregarBanner.Location = new System.Drawing.Point(7, 7);
+            this.gBoxAgregarBanner.Name = "gBoxAgregarBanner";
+            this.gBoxAgregarBanner.Size = new System.Drawing.Size(779, 225);
+            this.gBoxAgregarBanner.TabIndex = 0;
+            this.gBoxAgregarBanner.TabStop = false;
+            this.gBoxAgregarBanner.Text = "Datos del Banner";
+            // 
+            // cBoxFuenteDatosAgregBanner
+            // 
+            this.cBoxFuenteDatosAgregBanner.FormattingEnabled = true;
+            this.cBoxFuenteDatosAgregBanner.Location = new System.Drawing.Point(17, 138);
+            this.cBoxFuenteDatosAgregBanner.Name = "cBoxFuenteDatosAgregBanner";
+            this.cBoxFuenteDatosAgregBanner.Size = new System.Drawing.Size(194, 24);
+            this.cBoxFuenteDatosAgregBanner.TabIndex = 22;
+            // 
+            // lblFuenteDatos
+            // 
+            this.lblFuenteDatos.AutoSize = true;
+            this.lblFuenteDatos.Location = new System.Drawing.Point(14, 107);
+            this.lblFuenteDatos.Name = "lblFuenteDatos";
+            this.lblFuenteDatos.Size = new System.Drawing.Size(111, 17);
+            this.lblFuenteDatos.TabIndex = 21;
+            this.lblFuenteDatos.Text = "Fuente de datos";
+            // 
+            // nUpHastaHoraAgregarBan
+            // 
+            this.nUpHastaHoraAgregarBan.Location = new System.Drawing.Point(673, 130);
+            this.nUpHastaHoraAgregarBan.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.nUpHastaHoraAgregarBan.Name = "nUpHastaHoraAgregarBan";
+            this.nUpHastaHoraAgregarBan.Size = new System.Drawing.Size(67, 22);
+            this.nUpHastaHoraAgregarBan.TabIndex = 19;
+            this.nUpHastaHoraAgregarBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nUpDesdeHoraAgregarBan
+            // 
+            this.nUpDesdeHoraAgregarBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nUpDesdeHoraAgregarBan.Location = new System.Drawing.Point(673, 93);
+            this.nUpDesdeHoraAgregarBan.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.nUpDesdeHoraAgregarBan.Name = "nUpDesdeHoraAgregarBan";
+            this.nUpDesdeHoraAgregarBan.Size = new System.Drawing.Size(67, 22);
+            this.nUpDesdeHoraAgregarBan.TabIndex = 20;
+            this.nUpDesdeHoraAgregarBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblHastaHoraAgregar
+            // 
+            this.lblHastaHoraAgregar.AutoSize = true;
+            this.lblHastaHoraAgregar.Location = new System.Drawing.Point(598, 132);
+            this.lblHastaHoraAgregar.Name = "lblHastaHoraAgregar";
+            this.lblHastaHoraAgregar.Size = new System.Drawing.Size(45, 17);
+            this.lblHastaHoraAgregar.TabIndex = 18;
+            this.lblHastaHoraAgregar.Text = "Hasta";
+            // 
+            // lblDesdeHoraAgregar
+            // 
+            this.lblDesdeHoraAgregar.AutoSize = true;
+            this.lblDesdeHoraAgregar.Location = new System.Drawing.Point(598, 98);
+            this.lblDesdeHoraAgregar.Name = "lblDesdeHoraAgregar";
+            this.lblDesdeHoraAgregar.Size = new System.Drawing.Size(49, 17);
+            this.lblDesdeHoraAgregar.TabIndex = 17;
+            this.lblDesdeHoraAgregar.Text = "Desde";
+            // 
+            // lblRangoHorasAgregar
+            // 
+            this.lblRangoHorasAgregar.AutoSize = true;
+            this.lblRangoHorasAgregar.Location = new System.Drawing.Point(598, 66);
+            this.lblRangoHorasAgregar.Name = "lblRangoHorasAgregar";
+            this.lblRangoHorasAgregar.Size = new System.Drawing.Size(112, 17);
+            this.lblRangoHorasAgregar.TabIndex = 16;
+            this.lblRangoHorasAgregar.Text = "Rango de Horas";
+            // 
+            // dTPickFechaHastaBan
+            // 
+            this.dTPickFechaHastaBan.Checked = false;
+            this.dTPickFechaHastaBan.CustomFormat = "dd/MM/yyyy";
+            this.dTPickFechaHastaBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPickFechaHastaBan.Location = new System.Drawing.Point(391, 127);
+            this.dTPickFechaHastaBan.MinDate = new System.DateTime(2020, 6, 1, 0, 0, 0, 0);
+            this.dTPickFechaHastaBan.Name = "dTPickFechaHastaBan";
+            this.dTPickFechaHastaBan.Size = new System.Drawing.Size(113, 22);
+            this.dTPickFechaHastaBan.TabIndex = 15;
+            this.dTPickFechaHastaBan.Value = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
+            // 
+            // dTPickFechaDesdeBan
+            // 
+            this.dTPickFechaDesdeBan.Checked = false;
+            this.dTPickFechaDesdeBan.CustomFormat = "dd/MM/yyyy";
+            this.dTPickFechaDesdeBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPickFechaDesdeBan.Location = new System.Drawing.Point(391, 90);
+            this.dTPickFechaDesdeBan.MinDate = new System.DateTime(2020, 6, 1, 0, 0, 0, 0);
+            this.dTPickFechaDesdeBan.Name = "dTPickFechaDesdeBan";
+            this.dTPickFechaDesdeBan.Size = new System.Drawing.Size(113, 22);
+            this.dTPickFechaDesdeBan.TabIndex = 14;
+            this.dTPickFechaDesdeBan.Value = new System.DateTime(2020, 8, 19, 0, 0, 0, 0);
+            // 
+            // lblHastaFechaAgregar
+            // 
+            this.lblHastaFechaAgregar.AutoSize = true;
+            this.lblHastaFechaAgregar.Location = new System.Drawing.Point(315, 127);
+            this.lblHastaFechaAgregar.Name = "lblHastaFechaAgregar";
+            this.lblHastaFechaAgregar.Size = new System.Drawing.Size(45, 17);
+            this.lblHastaFechaAgregar.TabIndex = 13;
+            this.lblHastaFechaAgregar.Text = "Hasta";
+            // 
+            // lblDesdeFechaAgregar
+            // 
+            this.lblDesdeFechaAgregar.AutoSize = true;
+            this.lblDesdeFechaAgregar.Location = new System.Drawing.Point(315, 95);
+            this.lblDesdeFechaAgregar.Name = "lblDesdeFechaAgregar";
+            this.lblDesdeFechaAgregar.Size = new System.Drawing.Size(49, 17);
+            this.lblDesdeFechaAgregar.TabIndex = 12;
+            this.lblDesdeFechaAgregar.Text = "Desde";
+            // 
+            // lblEntreFechasAgregar
+            // 
+            this.lblEntreFechasAgregar.AutoSize = true;
+            this.lblEntreFechasAgregar.Location = new System.Drawing.Point(315, 63);
+            this.lblEntreFechasAgregar.Name = "lblEntreFechasAgregar";
+            this.lblEntreFechasAgregar.Size = new System.Drawing.Size(133, 17);
+            this.lblEntreFechasAgregar.TabIndex = 11;
+            this.lblEntreFechasAgregar.Text = "Rango entre fechas";
+            // 
+            // lblNomBanner
+            // 
+            this.lblNomBanner.AutoSize = true;
+            this.lblNomBanner.Location = new System.Drawing.Point(14, 43);
+            this.lblNomBanner.Name = "lblNomBanner";
+            this.lblNomBanner.Size = new System.Drawing.Size(58, 17);
+            this.lblNomBanner.TabIndex = 1;
+            this.lblNomBanner.Text = "Nombre";
+            // 
+            // txtNomAgregarBanner
+            // 
+            this.txtNomAgregarBanner.Location = new System.Drawing.Point(17, 63);
+            this.txtNomAgregarBanner.Name = "txtNomAgregarBanner";
+            this.txtNomAgregarBanner.Size = new System.Drawing.Size(242, 22);
+            this.txtNomAgregarBanner.TabIndex = 0;
+            // 
+            // tabModBanner
+            // 
+            this.tabModBanner.Controls.Add(this.btnModificarBanner);
+            this.tabModBanner.Controls.Add(this.btnModVolverBanner);
+            this.tabModBanner.Controls.Add(this.btnModEliminarBanner);
+            this.tabModBanner.Controls.Add(this.gBoxModBanner);
+            this.tabModBanner.Location = new System.Drawing.Point(4, 25);
+            this.tabModBanner.Name = "tabModBanner";
+            this.tabModBanner.Padding = new System.Windows.Forms.Padding(3);
+            this.tabModBanner.Size = new System.Drawing.Size(795, 344);
+            this.tabModBanner.TabIndex = 1;
+            this.tabModBanner.Text = "Modificar/Elimnar";
+            this.tabModBanner.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarBanner
+            // 
+            this.btnModificarBanner.Location = new System.Drawing.Point(240, 273);
+            this.btnModificarBanner.Name = "btnModificarBanner";
+            this.btnModificarBanner.Size = new System.Drawing.Size(110, 50);
+            this.btnModificarBanner.TabIndex = 27;
+            this.btnModificarBanner.Text = "Modificar";
+            this.btnModificarBanner.UseVisualStyleBackColor = true;
+            this.btnModificarBanner.Click += new System.EventHandler(this.btnModificarBanner_Click);
+            // 
+            // btnModVolverBanner
+            // 
+            this.btnModVolverBanner.Location = new System.Drawing.Point(413, 273);
+            this.btnModVolverBanner.Name = "btnModVolverBanner";
+            this.btnModVolverBanner.Size = new System.Drawing.Size(110, 50);
+            this.btnModVolverBanner.TabIndex = 26;
+            this.btnModVolverBanner.Text = "Volver";
+            this.btnModVolverBanner.UseVisualStyleBackColor = true;
+            this.btnModVolverBanner.Click += new System.EventHandler(this.btnModVolverBanner_Click);
+            // 
+            // btnModEliminarBanner
+            // 
+            this.btnModEliminarBanner.Location = new System.Drawing.Point(658, 273);
+            this.btnModEliminarBanner.Name = "btnModEliminarBanner";
+            this.btnModEliminarBanner.Size = new System.Drawing.Size(110, 50);
+            this.btnModEliminarBanner.TabIndex = 25;
+            this.btnModEliminarBanner.Text = "Eliminar";
+            this.btnModEliminarBanner.UseVisualStyleBackColor = true;
+            this.btnModEliminarBanner.Click += new System.EventHandler(this.btnModEliminarBanner_Click);
+            // 
+            // gBoxModBanner
+            // 
+            this.gBoxModBanner.Controls.Add(this.cBoxFuenteModBanner);
+            this.gBoxModBanner.Controls.Add(this.label7);
+            this.gBoxModBanner.Controls.Add(this.txtNomBannerMod);
+            this.gBoxModBanner.Controls.Add(this.cboxBuscarBannerMod);
+            this.gBoxModBanner.Controls.Add(this.lblNombreBannerMod);
+            this.gBoxModBanner.Controls.Add(this.lblBuscarNombre);
+            this.gBoxModBanner.Controls.Add(this.nUpHastaHoraModBan);
+            this.gBoxModBanner.Controls.Add(this.nUpDesdeHoraModBan);
+            this.gBoxModBanner.Controls.Add(this.label1);
+            this.gBoxModBanner.Controls.Add(this.label2);
+            this.gBoxModBanner.Controls.Add(this.label3);
+            this.gBoxModBanner.Controls.Add(this.dTPickFechaHastaModBan);
+            this.gBoxModBanner.Controls.Add(this.dTPickFechaDesdeModBan);
+            this.gBoxModBanner.Controls.Add(this.label4);
+            this.gBoxModBanner.Controls.Add(this.label5);
+            this.gBoxModBanner.Controls.Add(this.label6);
+            this.gBoxModBanner.Location = new System.Drawing.Point(3, 3);
+            this.gBoxModBanner.Name = "gBoxModBanner";
+            this.gBoxModBanner.Size = new System.Drawing.Size(787, 243);
+            this.gBoxModBanner.TabIndex = 0;
+            this.gBoxModBanner.TabStop = false;
+            this.gBoxModBanner.Text = "Datos del Banner";
+            // 
+            // cBoxFuenteModBanner
+            // 
+            this.cBoxFuenteModBanner.FormattingEnabled = true;
+            this.cBoxFuenteModBanner.Location = new System.Drawing.Point(132, 190);
+            this.cBoxFuenteModBanner.Name = "cBoxFuenteModBanner";
+            this.cBoxFuenteModBanner.Size = new System.Drawing.Size(215, 24);
+            this.cBoxFuenteModBanner.TabIndex = 36;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 193);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 17);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Fuente de datos";
+            // 
+            // txtNomBannerMod
+            // 
+            this.txtNomBannerMod.Location = new System.Drawing.Point(11, 119);
+            this.txtNomBannerMod.Name = "txtNomBannerMod";
+            this.txtNomBannerMod.Size = new System.Drawing.Size(221, 22);
+            this.txtNomBannerMod.TabIndex = 34;
+            // 
+            // cboxBuscarBannerMod
+            // 
+            this.cboxBuscarBannerMod.FormattingEnabled = true;
+            this.cboxBuscarBannerMod.Location = new System.Drawing.Point(11, 57);
+            this.cboxBuscarBannerMod.Name = "cboxBuscarBannerMod";
+            this.cboxBuscarBannerMod.Size = new System.Drawing.Size(211, 24);
+            this.cboxBuscarBannerMod.TabIndex = 33;
+            // 
+            // lblNombreBannerMod
+            // 
+            this.lblNombreBannerMod.AutoSize = true;
+            this.lblNombreBannerMod.Location = new System.Drawing.Point(8, 96);
+            this.lblNombreBannerMod.Name = "lblNombreBannerMod";
+            this.lblNombreBannerMod.Size = new System.Drawing.Size(108, 17);
+            this.lblNombreBannerMod.TabIndex = 32;
+            this.lblNombreBannerMod.Text = "Nombre Banner";
+            // 
+            // lblBuscarNombre
+            // 
+            this.lblBuscarNombre.AutoSize = true;
+            this.lblBuscarNombre.Location = new System.Drawing.Point(8, 32);
+            this.lblBuscarNombre.Name = "lblBuscarNombre";
+            this.lblBuscarNombre.Size = new System.Drawing.Size(178, 17);
+            this.lblBuscarNombre.TabIndex = 31;
+            this.lblBuscarNombre.Text = "Buscar banner por nombre";
+            // 
+            // nUpHastaHoraModBan
+            // 
+            this.nUpHastaHoraModBan.Location = new System.Drawing.Point(667, 117);
+            this.nUpHastaHoraModBan.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.nUpHastaHoraModBan.Name = "nUpHastaHoraModBan";
+            this.nUpHastaHoraModBan.Size = new System.Drawing.Size(67, 22);
+            this.nUpHastaHoraModBan.TabIndex = 29;
+            this.nUpHastaHoraModBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // nUpDesdeHoraModBan
+            // 
+            this.nUpDesdeHoraModBan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.nUpDesdeHoraModBan.Location = new System.Drawing.Point(667, 80);
+            this.nUpDesdeHoraModBan.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.nUpDesdeHoraModBan.Name = "nUpDesdeHoraModBan";
+            this.nUpDesdeHoraModBan.Size = new System.Drawing.Size(67, 22);
+            this.nUpDesdeHoraModBan.TabIndex = 30;
+            this.nUpDesdeHoraModBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(592, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 17);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Hasta";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(592, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Desde";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(592, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 17);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Rango de Horas";
+            // 
+            // dTPickFechaHastaModBan
+            // 
+            this.dTPickFechaHastaModBan.Checked = false;
+            this.dTPickFechaHastaModBan.CustomFormat = "dd/MM/yyyy";
+            this.dTPickFechaHastaModBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPickFechaHastaModBan.Location = new System.Drawing.Point(390, 117);
+            this.dTPickFechaHastaModBan.MinDate = new System.DateTime(2020, 6, 1, 0, 0, 0, 0);
+            this.dTPickFechaHastaModBan.Name = "dTPickFechaHastaModBan";
+            this.dTPickFechaHastaModBan.Size = new System.Drawing.Size(113, 22);
+            this.dTPickFechaHastaModBan.TabIndex = 25;
+            this.dTPickFechaHastaModBan.Value = new System.DateTime(2020, 8, 13, 0, 0, 0, 0);
+            // 
+            // dTPickFechaDesdeModBan
+            // 
+            this.dTPickFechaDesdeModBan.Checked = false;
+            this.dTPickFechaDesdeModBan.CustomFormat = "dd/MM/yyyy";
+            this.dTPickFechaDesdeModBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTPickFechaDesdeModBan.Location = new System.Drawing.Point(390, 80);
+            this.dTPickFechaDesdeModBan.MinDate = new System.DateTime(2020, 6, 1, 0, 0, 0, 0);
+            this.dTPickFechaDesdeModBan.Name = "dTPickFechaDesdeModBan";
+            this.dTPickFechaDesdeModBan.Size = new System.Drawing.Size(113, 22);
+            this.dTPickFechaDesdeModBan.TabIndex = 24;
+            this.dTPickFechaDesdeModBan.Value = new System.DateTime(2020, 8, 10, 0, 0, 0, 0);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(314, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "Hasta";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(314, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 17);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Desde";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(314, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 17);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Rango entre fechas";
+            // 
+            // GestionBanner
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(803, 374);
+            this.Controls.Add(this.tabCtrlBanner);
+            this.Name = "GestionBanner";
             this.Text = "GestionBanner";
+            this.Load += new System.EventHandler(this.GestionBanner_Load);
+            this.tabCtrlBanner.ResumeLayout(false);
+            this.tabAgregarBanner.ResumeLayout(false);
+            this.gBoxAgregarBanner.ResumeLayout(false);
+            this.gBoxAgregarBanner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraAgregarBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraAgregarBan)).EndInit();
+            this.tabModBanner.ResumeLayout(false);
+            this.gBoxModBanner.ResumeLayout(false);
+            this.gBoxModBanner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraModBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraModBan)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TabControl tabCtrlBanner;
+        private System.Windows.Forms.TabPage tabAgregarBanner;
+        private System.Windows.Forms.TabPage tabModBanner;
+        private System.Windows.Forms.GroupBox gBoxAgregarBanner;
+        private System.Windows.Forms.Label lblNomBanner;
+        private System.Windows.Forms.TextBox txtNomAgregarBanner;
+        private System.Windows.Forms.DateTimePicker dTPickFechaHastaBan;
+        private System.Windows.Forms.DateTimePicker dTPickFechaDesdeBan;
+        private System.Windows.Forms.Label lblHastaFechaAgregar;
+        private System.Windows.Forms.Label lblDesdeFechaAgregar;
+        private System.Windows.Forms.Label lblEntreFechasAgregar;
+        private System.Windows.Forms.NumericUpDown nUpHastaHoraAgregarBan;
+        private System.Windows.Forms.NumericUpDown nUpDesdeHoraAgregarBan;
+        private System.Windows.Forms.Label lblHastaHoraAgregar;
+        private System.Windows.Forms.Label lblDesdeHoraAgregar;
+        private System.Windows.Forms.Label lblRangoHorasAgregar;
+        private System.Windows.Forms.ComboBox cBoxFuenteDatosAgregBanner;
+        private System.Windows.Forms.Label lblFuenteDatos;
+        private System.Windows.Forms.Button BtnVolverBanner;
+        private System.Windows.Forms.Button btnAceptarBanner;
+        private System.Windows.Forms.GroupBox gBoxModBanner;
+        private System.Windows.Forms.NumericUpDown nUpHastaHoraModBan;
+        private System.Windows.Forms.NumericUpDown nUpDesdeHoraModBan;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dTPickFechaHastaModBan;
+        private System.Windows.Forms.DateTimePicker dTPickFechaDesdeModBan;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cBoxFuenteModBanner;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtNomBannerMod;
+        private System.Windows.Forms.ComboBox cboxBuscarBannerMod;
+        private System.Windows.Forms.Label lblNombreBannerMod;
+        private System.Windows.Forms.Label lblBuscarNombre;
+        private System.Windows.Forms.Button btnModEliminarBanner;
+        private System.Windows.Forms.Button btnModVolverBanner;
+        private System.Windows.Forms.Button btnModificarBanner;
     }
 }

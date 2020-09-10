@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ControladorBanner.cs" />
     <Compile Include="Controladores\ControladorCampaña.cs" />
     <Compile Include="Controladores\ControladorImagen.cs" />
+    <Compile Include="Control\Controles.cs" />
     <Compile Include="DAL\EntityFramework\CarteleriaDigitalContext.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioBanner.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioCampaña.cs" />
@@ -85,6 +87,14 @@
     <Compile Include="Migrations\202009070523042_Inicio.cs" />
     <Compile Include="Migrations\202009070523042_Inicio.designer.cs">
       <DependentUpon>202009070523042_Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009091921478_432.cs" />
+    <Compile Include="Migrations\202009091921478_432.designer.cs">
+      <DependentUpon>202009091921478_432.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009101504556_987.cs" />
+    <Compile Include="Migrations\202009101504556_987.designer.cs">
+      <DependentUpon>202009101504556_987.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Vistas\GestionBanner.cs">
@@ -119,6 +129,12 @@
     <EmbeddedResource Include="Migrations\202009070523042_Inicio.resx">
       <DependentUpon>202009070523042_Inicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009091921478_432.resx">
+      <DependentUpon>202009091921478_432.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009101504556_987.resx">
+      <DependentUpon>202009101504556_987.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,6 +145,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Vistas\GestionBanner.resx">
+      <DependentUpon>GestionBanner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\GestionCampaña.resx">
       <DependentUpon>GestionCampaña.cs</DependentUpon>
     </EmbeddedResource>

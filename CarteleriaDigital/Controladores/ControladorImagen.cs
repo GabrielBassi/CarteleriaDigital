@@ -16,7 +16,7 @@ namespace CarteleriaDigital.Controladores
         private readonly UnidadDeTrabajo iUdT;
         int contador = 0;
         int aa = 0;
-        int jj = 0;
+        //int jj = 0;
         public ControladorImagen(UnidadDeTrabajo pUnidadDeTrabajo, int pAa, int pjj)
         {
             this.iUdT = pUnidadDeTrabajo;
