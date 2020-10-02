@@ -9,6 +9,7 @@ namespace CarteleriaDigital.DAL
 {
     interface IRepositorioBanner : IRepositorioGeneral<Banner>
     {
-
+        Banner ExistenciaBanner(string pNombre);
+        bool ExisteBannerPorNombre(string pNombreBanner);
     }
 }

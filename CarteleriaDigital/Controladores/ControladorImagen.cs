@@ -36,7 +36,7 @@ namespace CarteleriaDigital.Controladores
         public void CargarImagenes(IList<Imagen> listaImagenes, GroupBox gBoxImagen, int pContador)
         {
             contador = pContador;
-            contador = contador + 1;
+            contador += 1;
             OpenFileDialog CargarImagen = new OpenFileDialog();
             CargarImagen.Filter = "Imágenes(*.jpg, *.gif, *.bmp)|*.jpg;*.gif;*.png";
 
@@ -131,7 +131,7 @@ namespace CarteleriaDigital.Controladores
                     imagPic.SizeMode = PictureBoxSizeMode.StretchImage;
                     imagPic.Location = new Point(aa, jj);
                     imagPic.Image = Image.FromFile(item.RutaImagen);
-                    aa = aa + 190;
+                    aa += 190;
                 }
 
             }
@@ -148,12 +148,12 @@ namespace CarteleriaDigital.Controladores
                         imagPic.SizeMode = PictureBoxSizeMode.StretchImage;
                         imagPic.Location = new Point(aa, jj);
                         imagPic.Image = Image.FromFile(item.RutaImagen);
-                        aa = aa + 190;
-                        contador = contador + 1;
+                        aa += 190;
+                        contador += 1;
                         if (contador == 5)
                         {
-                            aa = aa + 190;
-                            jj = jj + 180;
+                            aa += 190;
+                            jj += 180;
                             gBoxImagenMod.Controls.Add(imagPic);
                             imagPic.Size = new Size(150, 150);
                             imagPic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -202,7 +202,7 @@ namespace CarteleriaDigital.Controladores
         public bool CargarImagenesMod(IList<Imagen> listaImagenes, IList<Imagen> pListaImagenMod, GroupBox gBoxImagen) // es el que anda
         {
             bool control = false;
-            contador = contador + 1;
+            contador += 1;
             OpenFileDialog CargarImagen = new OpenFileDialog();
             CargarImagen.Filter = "Imágenes(*.jpg, *.gif, *.bmp)|*.jpg;*.gif;*.png";
 

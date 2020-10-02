@@ -16,6 +16,6 @@ namespace CarteleriaDigital.Modelo
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFin { get; set; }
 
-        // public virtual TipoFuente TipoFuente { get; set; }
+        public virtual EstrategiaTipoDatosFuente EstrategiaTipoDatosFuente { get; set; }
     }
 }

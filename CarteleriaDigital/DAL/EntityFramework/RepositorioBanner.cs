@@ -13,5 +13,16 @@ namespace CarteleriaDigital.DAL.EntityFramework
         {
 
         }
+        public Banner ExistenciaBanner(string pNombre)
+        {
+            return iDbContext.Banners.Where(x => x.NombreBanner == pNombre).FirstOrDefault();
+        }
+
+        public bool ExisteBannerPorNombre(string pNombre)
+        {
+            bool valor = false;
+            valor = iDbContext.Banners.Any(x => x.NombreBanner == pNombre);
+            return valor;
+        }
     }
 }

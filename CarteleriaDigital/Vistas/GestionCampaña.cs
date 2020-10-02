@@ -105,7 +105,7 @@ namespace CarteleriaDigital.Vistas
             try
             {
                 iControladorImagen.CargarImagenes(listaImagenes, gBoxImagenes, contador);
-                contador = contador + 1;
+                contador += 1;
             }
             catch (Exception)
             {
@@ -212,6 +212,7 @@ namespace CarteleriaDigital.Vistas
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraMod.Value);
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
+
                 if (control == true)
                 {
                     iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), listaImagenesMod);

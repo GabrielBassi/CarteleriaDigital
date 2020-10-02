@@ -12,5 +12,16 @@ namespace CarteleriaDigital.DAL.EntityFramework
         public RepositorioTextoFijo(CarteleriaDigitalContext pContext) : base(pContext)
         {
         }
+        public IList<TextoFijo> ObtenerTextoFijo(string pNombre)
+        {
+            return this.iDbContext.TextoFijos.Where(e => e.Nombre == pNombre).ToList();
+        }
+
+        public bool ExisteTextoFijoPorNombre(string pNombre)
+        {
+            bool valor = false;
+            valor = iDbContext.TextoFijos.Any(x => x.Nombre == pNombre);
+            return valor;
+        }
     }
 }

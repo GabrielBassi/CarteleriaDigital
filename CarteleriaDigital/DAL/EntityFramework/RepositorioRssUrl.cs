@@ -13,5 +13,18 @@ namespace CarteleriaDigital.DAL.EntityFramework
         {
 
         }
+        public RssUrl ExistenciaRssUrl(string pNombre)
+        {
+            return iDbContext.RssUrls.Where(x => x.Nombre == pNombre).FirstOrDefault();
+        }
+
+        public bool ExisteRssUrlPorNombre(string pNombre)
+        {
+            bool valor = false;
+            valor = iDbContext.RssUrls.Any(x => x.Nombre == pNombre);
+            return valor;
+        }
+
+
     }
 }

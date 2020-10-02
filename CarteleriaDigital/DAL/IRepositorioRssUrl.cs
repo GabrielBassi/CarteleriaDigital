@@ -10,5 +10,7 @@ namespace CarteleriaDigital.DAL
 {
     interface IRepositorioRssUrl : IRepositorioGeneral<RssUrl>
     {
+        RssUrl ExistenciaRssUrl(string pNombre);
+        bool ExisteRssUrlPorNombre(string pNombreRss);
     }
 }

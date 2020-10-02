@@ -22,6 +22,7 @@ namespace CarteleriaDigital.DAL.EntityFramework
             this.RepositorioRssUrl = new RepositorioRssUrl(this.iDbContext);
             this.RepositorioFuenteRssUrl = new RepositorioFuenteRss(this.iDbContext);
             this.RepositorioTextoFijo = new RepositorioTextoFijo(this.iDbContext);
+            this.RepositorioEstrategiaTipoDatos = new RepositorioEstrategiaTipoDatosFuente(this.iDbContext);
         }
 
         //Implementacion de las interfaces en la unidad de trabajo
@@ -32,6 +33,8 @@ namespace CarteleriaDigital.DAL.EntityFramework
         public IRepositorioRssUrl RepositorioRssUrl { get; private set; }
         public IRepositorioFuenteRssUrl RepositorioFuenteRssUrl { get; private set; }
         public IRepositorioTextoFijo RepositorioTextoFijo { get; private set; }
+
+        public IRepositorioEstrategiaTipoDatosFuente RepositorioEstrategiaTipoDatos { get; private set; }
 
         /// <summary>
         /// Patron singleton para usar el mismo contexto en todo el sistema

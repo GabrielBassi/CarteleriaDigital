@@ -59,10 +59,14 @@
     <Compile Include="Controladores\ControladorBanner.cs" />
     <Compile Include="Controladores\ControladorCampaña.cs" />
     <Compile Include="Controladores\ControladorImagen.cs" />
+    <Compile Include="Controladores\ControladorRssUrl.cs" />
+    <Compile Include="Controladores\ControladorTextoFijo.cs" />
     <Compile Include="Control\Controles.cs" />
     <Compile Include="DAL\EntityFramework\CarteleriaDigitalContext.cs" />
+    <Compile Include="DAL\IRepositorioEstrategiaTipoDatosFuente.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioBanner.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioCampaña.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioEstrategiaTipoDatosFuente.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioFuenteRss.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioGeneral.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioImagen.cs" />
@@ -80,23 +84,13 @@
     <Compile Include="Excepciones\ExcepcionControlFechas.cs" />
     <Compile Include="Excepciones\ExisteNombre.cs" />
     <Compile Include="Excepciones\FaltanDatosObligatorios.cs" />
-    <Compile Include="Migrations\202009070509456_Inici.cs" />
-    <Compile Include="Migrations\202009070509456_Inici.designer.cs">
-      <DependentUpon>202009070509456_Inici.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009070523042_Inicio.cs" />
-    <Compile Include="Migrations\202009070523042_Inicio.designer.cs">
-      <DependentUpon>202009070523042_Inicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009091921478_432.cs" />
-    <Compile Include="Migrations\202009091921478_432.designer.cs">
-      <DependentUpon>202009091921478_432.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009101504556_987.cs" />
-    <Compile Include="Migrations\202009101504556_987.designer.cs">
-      <DependentUpon>202009101504556_987.cs</DependentUpon>
+    <Compile Include="Migrations\202009211954441_li.cs" />
+    <Compile Include="Migrations\202009211954441_li.designer.cs">
+      <DependentUpon>202009211954441_li.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modelo\EstrategiaTipoDatosFuente.cs" />
+    <Compile Include="Modelo\IEstrategiaTipoDatosFuente.cs" />
     <Compile Include="Vistas\GestionBanner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,17 +117,8 @@
     <Compile Include="Modelo\TextoFijo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202009070509456_Inici.resx">
-      <DependentUpon>202009070509456_Inici.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009070523042_Inicio.resx">
-      <DependentUpon>202009070523042_Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009091921478_432.resx">
-      <DependentUpon>202009091921478_432.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009101504556_987.resx">
-      <DependentUpon>202009101504556_987.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009211954441_li.resx">
+      <DependentUpon>202009211954441_li.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

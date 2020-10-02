@@ -20,8 +20,6 @@ C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFrame
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFramework.xml
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.csprojAssemblyReference.cache
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.Inici.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Properties.Resources.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.MenuPrincipal.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.csproj.GenerateResource.cache
@@ -29,8 +27,7 @@ C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaD
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.csproj.CopyComplete
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.exe
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.pdb
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.Inicio.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionCampaña.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionBanner.resources
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations._432.resources
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations._987.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.csprojAssemblyReference.cache
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.li.resources

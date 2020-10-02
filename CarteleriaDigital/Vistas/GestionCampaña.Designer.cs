@@ -31,6 +31,7 @@
             this.tbCtrlAgregar = new System.Windows.Forms.TabPage();
             this.btnAceptarCampaña = new System.Windows.Forms.Button();
             this.gBoxInfoCampaña = new System.Windows.Forms.GroupBox();
+            this.CargarImag = new System.Windows.Forms.Button();
             this.nUDuracionAgregar = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.nUpHastaHoraAgregar = new System.Windows.Forms.NumericUpDown();
@@ -55,6 +56,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.gBoxCampañaMod = new System.Windows.Forms.GroupBox();
+            this.CargarImagMod = new System.Windows.Forms.Button();
             this.nUDuracionMod = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.nUpHastaHoraMod = new System.Windows.Forms.NumericUpDown();
@@ -71,8 +73,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cBoxModCampActivas = new System.Windows.Forms.ComboBox();
             this.lblModCampañasAct = new System.Windows.Forms.Label();
-            this.CargarImag = new System.Windows.Forms.Button();
-            this.CargarImagMod = new System.Windows.Forms.Button();
             this.tabCampaña.SuspendLayout();
             this.tbCtrlAgregar.SuspendLayout();
             this.gBoxInfoCampaña.SuspendLayout();
@@ -146,6 +146,16 @@
             this.gBoxInfoCampaña.TabIndex = 0;
             this.gBoxInfoCampaña.TabStop = false;
             this.gBoxInfoCampaña.Text = "Información de campaña";
+            // 
+            // CargarImag
+            // 
+            this.CargarImag.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
+            this.CargarImag.Location = new System.Drawing.Point(938, 21);
+            this.CargarImag.Name = "CargarImag";
+            this.CargarImag.Size = new System.Drawing.Size(60, 60);
+            this.CargarImag.TabIndex = 19;
+            this.CargarImag.UseVisualStyleBackColor = true;
+            this.CargarImag.Click += new System.EventHandler(this.CargarImag_Click);
             // 
             // nUDuracionAgregar
             // 
@@ -247,7 +257,7 @@
             // 
             this.txBoxNombreAgregarCamp.Location = new System.Drawing.Point(24, 59);
             this.txBoxNombreAgregarCamp.Name = "txBoxNombreAgregarCamp";
-            this.txBoxNombreAgregarCamp.Size = new System.Drawing.Size(234, 22);
+            this.txBoxNombreAgregarCamp.Size = new System.Drawing.Size(250, 22);
             this.txBoxNombreAgregarCamp.TabIndex = 11;
             // 
             // dTPickFechaHasta
@@ -429,6 +439,16 @@
             this.gBoxCampañaMod.TabStop = false;
             this.gBoxCampañaMod.Text = "Campañas";
             // 
+            // CargarImagMod
+            // 
+            this.CargarImagMod.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
+            this.CargarImagMod.Location = new System.Drawing.Point(938, 21);
+            this.CargarImagMod.Name = "CargarImagMod";
+            this.CargarImagMod.Size = new System.Drawing.Size(60, 60);
+            this.CargarImagMod.TabIndex = 22;
+            this.CargarImagMod.UseVisualStyleBackColor = true;
+            this.CargarImagMod.Click += new System.EventHandler(this.CargarImagMod_Click);
+            // 
             // nUDuracionMod
             // 
             this.nUDuracionMod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -605,26 +625,6 @@
             this.lblModCampañasAct.Size = new System.Drawing.Size(169, 17);
             this.lblModCampañasAct.TabIndex = 0;
             this.lblModCampañasAct.Text = "Campañas activas del día";
-            // 
-            // CargarImag
-            // 
-            this.CargarImag.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
-            this.CargarImag.Location = new System.Drawing.Point(938, 21);
-            this.CargarImag.Name = "CargarImag";
-            this.CargarImag.Size = new System.Drawing.Size(60, 60);
-            this.CargarImag.TabIndex = 19;
-            this.CargarImag.UseVisualStyleBackColor = true;
-            this.CargarImag.Click += new System.EventHandler(this.CargarImag_Click);
-            // 
-            // CargarImagMod
-            // 
-            this.CargarImagMod.Image = global::CarteleriaDigital.Properties.Resources._Imagen;
-            this.CargarImagMod.Location = new System.Drawing.Point(938, 21);
-            this.CargarImagMod.Name = "CargarImagMod";
-            this.CargarImagMod.Size = new System.Drawing.Size(60, 60);
-            this.CargarImagMod.TabIndex = 22;
-            this.CargarImagMod.UseVisualStyleBackColor = true;
-            this.CargarImagMod.Click += new System.EventHandler(this.CargarImagMod_Click);
             // 
             // GestionCampaña
             // 

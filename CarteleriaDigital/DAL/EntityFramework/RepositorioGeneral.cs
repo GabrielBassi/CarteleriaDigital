@@ -62,7 +62,7 @@ namespace CarteleriaDigital.DAL.EntityFramework
         /// <summary>
         /// Genera una lista de todos objetos del repositorio
         /// </summary>
-        /// <returns></returns>
+        /// <returns></returns>?
         public IList<TEntity> ObtenerTodos()
         {
             return this.iDbContext.Set<TEntity>().ToList();

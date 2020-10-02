@@ -1,0 +1,81 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using CarteleriaDigital.DAL;
+using CarteleriaDigital.Modelo;
+
+namespace CarteleriaDigital.Controladores
+{
+    class ControladorTextoFijo
+    {
+        private readonly IUnidadDeTrabajo iUdT;
+
+        public ControladorTextoFijo(IUnidadDeTrabajo pUnidadDeTrabajo)
+        {
+            this.iUdT = pUnidadDeTrabajo;
+        }
+
+        public void AgregarTextoFijo(string pNombre, string pDescripcion)
+        {
+            XDocument mDocumentoXML = new XDocument(
+                    new XDeclaration("1.0", "utf-8", "yes"),
+                    new XElement("item",
+                        new XElement("title", pNombre),
+                        new XElement("description", pDescripcion)
+                        )
+                    );
+
+            string nombreArchivoXML = string.Format("{0}.xml", pNombre);
+            //Rura donde se guardara el archivo XML
+            string mRuta = Path.Combine(string.Format("{0}{1}", Directory.GetCurrentDirectory(), @"..\..\..\"), @"DAL\ArchivosXML\" + nombreArchivoXML);
+
+            //Guardo el documento XML
+            mDocumentoXML.Save(mRuta);
+
+            TextoFijo iTextoFijo = new TextoFijo()
+            { 
+            Nombre = pNombre,
+            Path = mRuta,
+            };
+            this.iUdT.RepositorioTextoFijo.Agregar(iTextoFijo);
+            iUdT.Guardar();
+        }
+
+        public IList<TextoFijo> ObtenerTextoFijo(string pNombre)
+        {
+            return this.iUdT.RepositorioTextoFijo.ObtenerTextoFijo(pNombre);
+        }
+
+        public TextoFijo Obtener(int textoFijoId)
+        {
+          
+                return this.iUdT.RepositorioTextoFijo.Obtener(textoFijoId);
+            
+        }
+        public int UltimoIdTextoFijo()
+        {
+            IEnumerable<TextoFijo> lista;
+            lista = iUdT.RepositorioTextoFijo.ObtenerTodos();
+            return lista.Last().TextoFijoId;
+        }
+
+        internal bool ConsultarExistenciaNombreTextoFijo(string pNombreTextoFijo)
+        {
+            bool existencia = false;
+            existencia = iUdT.RepositorioTextoFijo.ExisteTextoFijoPorNombre(pNombreTextoFijo);
+            if (existencia == true)
+            {
+                return true;
+            }
+            else 
+            {
+                return existencia;
+            }
+        }
+    }
+  
+}

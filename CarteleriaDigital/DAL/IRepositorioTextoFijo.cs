@@ -9,5 +9,7 @@ namespace CarteleriaDigital.DAL
 {
     interface IRepositorioTextoFijo : IRepositorioGeneral<TextoFijo>
     {
+        IList<TextoFijo> ObtenerTextoFijo(string pNombre);
+        bool ExisteTextoFijoPorNombre(string pNombreTextoFijo);
     }
 }

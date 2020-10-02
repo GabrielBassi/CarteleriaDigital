@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarteleriaDigital.DAL.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace CarteleriaDigital.DAL
         IRepositorioRssUrl RepositorioRssUrl { get; }
         IRepositorioTextoFijo RepositorioTextoFijo { get; }
         IRepositorioFuenteRssUrl RepositorioFuenteRssUrl { get; }
+        IRepositorioEstrategiaTipoDatosFuente RepositorioEstrategiaTipoDatos { get; }
 
         /// <summary>
         /// Guardar en memoria (savechanges)
