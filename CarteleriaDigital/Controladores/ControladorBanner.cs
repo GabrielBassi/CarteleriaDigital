@@ -48,13 +48,14 @@ namespace CarteleriaDigital.Controladores
             this.iUdT.RepositorioBanner.Agregar(iBanner);
             iUdT.Guardar();
         }
-        public void ModificarBanner(Banner pBanner, string pNombre, DateTime pFechaInicio, DateTime pFechaFin, TimeSpan pHoraInicio, TimeSpan pHoraFin, int pidDatosFuente)
+        public void ModificarBanner(Banner pBanner, string pNombre, DateTime pFechaInicio, DateTime pFechaFin, TimeSpan pHoraInicio, TimeSpan pHoraFin, int pidDatosFuente, string pNombreEstrategia)
         {
             pBanner.NombreBanner = pNombre;
             pBanner.FechaInicio = pFechaInicio;
             pBanner.FechaFin = pFechaFin;
             pBanner.HoraInicio = pHoraInicio;
             pBanner.HoraFin = pHoraFin;
+            pBanner.EstrategiaTipoDatosFuente.NombreTipoDeEstrategia = pNombreEstrategia;
             pBanner.EstrategiaTipoDatosFuente.DatosEstrategiaId = pidDatosFuente;
             this.iUdT.RepositorioBanner.Modificar(pBanner);
             iUdT.Guardar();

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using CarteleriaDigital.DAL;
 using CarteleriaDigital.Modelo;
@@ -74,6 +75,29 @@ namespace CarteleriaDigital.Controladores
             else 
             {
                 return existencia;
+            }
+        }
+        public void CargarTextoFijoActivos(ComboBox pComboTextoFijo)
+        {
+            IEnumerable<TextoFijo> listaTextoFijo = iUdT.RepositorioTextoFijo.ObtenerTodos();
+            foreach (TextoFijo item in listaTextoFijo)
+            {
+                pComboTextoFijo.Items.Add(item.Nombre);
+            }
+        }
+        public TextoFijo BuscarTextoFijoPorNombre(string pCadena)
+        {
+            TextoFijo iTextoFijo = iUdT.RepositorioTextoFijo.ExistenciaTextoFijo(pCadena);
+            return iTextoFijo;
+        }
+        public void CargarTextoFijoModificar(TextoFijo pTextoFijo, TextBox txtNombreTextoFijoMod, TextBox txtDescripModTexFijo )
+        {
+            txtNombreTextoFijoMod.Text = pTextoFijo.Nombre;
+            var contenido = XDocument.Load(pTextoFijo.Path);
+          //  txtDescripModTexFijo.Text = Convert.ToString(contenido);
+            foreach (var item in contenido.Elements())
+            {
+                txtDescripModTexFijo.Text = item.Element("description").Value;
             }
         }
     }

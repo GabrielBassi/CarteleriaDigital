@@ -23,5 +23,9 @@ namespace CarteleriaDigital.DAL.EntityFramework
             valor = iDbContext.TextoFijos.Any(x => x.Nombre == pNombre);
             return valor;
         }
+        public TextoFijo ExistenciaTextoFijo(string pNombre)
+        {
+            return iDbContext.TextoFijos.Where(x => x.Nombre == pNombre).FirstOrDefault();
+        }
     }
 }

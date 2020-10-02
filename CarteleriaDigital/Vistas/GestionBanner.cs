@@ -23,6 +23,7 @@ namespace CarteleriaDigital.Vistas
         Controles iControl;
         Banner mBannerMod;
         RssUrl mRssUrl;
+        TextoFijo mTextoFijo;
         int pDatosEstrategia = 0;
         int idDatosTipoFuente = 0;
         public GestionBanner()
@@ -155,13 +156,10 @@ namespace CarteleriaDigital.Vistas
                 iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
             }
             else if (tabCtrlBanner.SelectedIndex == 1)
-                
             {
-
                 LimpiarPantallaMod();
-                //iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
                 iControladorRssUrl.CargarRssActivos(cBoxModRss);
-
+                iControladorTextoFijo.CargarTextoFijoActivos(CmbModTextoFijo);
             }
 
         }
@@ -185,6 +183,9 @@ namespace CarteleriaDigital.Vistas
             txtDescripTextoFijo.Text = "";
             cBoxModRss.Items.Clear();
             cBoxModRss.Text = "";
+            cBoxFuenteModBanner.SelectedItem = null;
+            CmbModTextoFijo.Items.Clear();
+
         }
         private void LimpiarPantallaMod()
         {
@@ -199,6 +200,8 @@ namespace CarteleriaDigital.Vistas
             cBoxFuenteModBanner.Text = "";
             txtNombreTextoFijoMod.Text = "";
             txtDescripModTexFijo.Text = "";
+            cBoxFuenteDatosAgregBanner.SelectedItem = null;
+            CmbModTextoFijo.SelectedItem = null;
         }
 
         private void btnModVolverBanner_Click(object sender, EventArgs e)
@@ -254,7 +257,7 @@ namespace CarteleriaDigital.Vistas
                     }
                 }
 
-                iControladorBanner.ModificarBanner(mBannerMod, txtNomBannerMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, idDatosTipoFuente);
+                iControladorBanner.ModificarBanner(mBannerMod, txtNomBannerMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, idDatosTipoFuente, cBoxFuenteModBanner.Text);
 
             MessageBox.Show("El Banner se modifico correctamente", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarPantallaMod();
@@ -340,6 +343,26 @@ namespace CarteleriaDigital.Vistas
                 mRssUrl = iControladorRssUrl.BuscarRssPorNombre(cBoxModRss.Text);
                 idDatosTipoFuente= iControladorRssUrl.BuscarRssPorNombre(cBoxModRss.Text).RssUrlId;
                 iControladorRssUrl.CargarRssUrlModificar(mRssUrl, txtNombreModRss, txtModUrl);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error al cargar", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmbModTextoFijo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                mTextoFijo = iControladorTextoFijo.BuscarTextoFijoPorNombre(CmbModTextoFijo.Text);
+                idDatosTipoFuente = mTextoFijo.TextoFijoId;
+                //  iControladorTextoFijo.
+                iControladorTextoFijo.CargarTextoFijoModificar(mTextoFijo, txtNombreTextoFijoMod, txtDescripModTexFijo);
             }
             catch (Exception)
             {

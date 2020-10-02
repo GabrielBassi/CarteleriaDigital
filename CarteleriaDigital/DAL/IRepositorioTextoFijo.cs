@@ -11,5 +11,6 @@ namespace CarteleriaDigital.DAL
     {
         IList<TextoFijo> ObtenerTextoFijo(string pNombre);
         bool ExisteTextoFijoPorNombre(string pNombreTextoFijo);
+        TextoFijo ExistenciaTextoFijo(string pNombre);
     }
 }
