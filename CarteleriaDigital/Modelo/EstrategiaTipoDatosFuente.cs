@@ -31,9 +31,9 @@ namespace CarteleriaDigital.Modelo
         /// Metodo que implementan todos los objetos Estrategia.
         /// </summary>
         /// <returns></returns>
-        public XDocument LeerInformacion()
+        public XDocument LeerInformacion(string pcadena)
         {
-            return this.EstrategiaTipoDatosFuentes.LeerInformacion();
+            return this.EstrategiaTipoDatosFuentes.LeerInformacion(pcadena);
         }
 
         //public enum TipoDeEstrategia

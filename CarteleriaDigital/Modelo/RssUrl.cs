@@ -1,13 +1,8 @@
-﻿using CarteleriaDigital.Controladores;
-using CarteleriaDigital.DAL.EntityFramework;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -16,42 +11,23 @@ namespace CarteleriaDigital.Modelo
     public class RssUrl : IEstrategiaTipoDatosFuente
     {
         public int RssUrlId { get; set; }
-
-        //public Uri UrlBD { get; set; }
         public string Nombre { get; set; }
         public string Url { get; set; }
 
-        //////private Uri iUriURL;
-
-        public virtual IList<FuenteRss> ListaFuenteRss { get; set; }
-
-
-        //public RssUrl(Uri pUrl)
-        //{
-        //    this.iUriURL = pUrl;
-        //}
-        public XDocument LeerInformacion()
+        public XDocument LeerInformacion(string purl)
         {
             RssUrl mLectorRSS = new RssUrl();
-            return mLectorRSS.ObteneDocumentoXML();
+            return mLectorRSS.ObteneDocumentoXML(purl);
         }
 
-
-        //public XDocument LeerInformacion()
-        //{
-        //    RssUrl mLectorRSS = new RssUrl(this.iUriURL);
-        //    return mLectorRSS.ObteneDocumentoXML();
-        //}
-        public XDocument ObteneDocumentoXML()
+        public XDocument ObteneDocumentoXML(string purl)
         {
             try
             {
                 string[] mInformacion = new string[2];
                 string mDescripcionSinSaltosDeLineas = "";
 
-
-                //XmlTextReader mXmlReader = new XmlTextReader(this.iUriURL.AbsoluteUri);
-                XmlTextReader mXmlReader = new XmlTextReader(this.Url);
+                XmlTextReader mXmlReader = new XmlTextReader(purl);
                 XDocument mDocumentoXML = XDocument.Load(mXmlReader);
                 var mListaItemNodo = mDocumentoXML.Descendants("item");
 
@@ -74,8 +50,7 @@ namespace CarteleriaDigital.Modelo
                 }
 
                 XDocument mDocumentoXMLReducido = new XDocument(
-                   new XDeclaration("1.0", "utf-8", "yes"),
-                   new XElement("item",
+                   new XDeclaration("1.0", "utf-8", "yes"),                   new XElement("item",
                        new XElement("title", mInformacion[0]),
                        new XElement("description", mInformacion[1])
                        )

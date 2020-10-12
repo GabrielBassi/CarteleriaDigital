@@ -19,7 +19,6 @@ namespace CarteleriaDigital.DAL.EntityFramework
         public DbSet<Banner> Banners { get; set; }
         public DbSet<RssUrl> RssUrls { get; set; }
         public DbSet<TextoFijo> TextoFijos { get; set; }
-        public DbSet<FuenteRss> FuentesRss { get; set; }
         public DbSet<EstrategiaTipoDatosFuente> EstrategiaTipoDatos { get; set; }
     }
 }

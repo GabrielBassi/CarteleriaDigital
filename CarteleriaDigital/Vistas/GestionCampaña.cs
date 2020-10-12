@@ -79,6 +79,7 @@ namespace CarteleriaDigital.Vistas
                 iControladorCampaña.AgregarCampaña(txBoxNombreAgregarCamp.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionAgregar.Text), listaImagenes);
                 MessageBox.Show("La campaña se registro con exito", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 contador = 0; ///
+                listaImagenes = new List<Imagen>();
                 LimpiarPantallaAlta();
 
             }

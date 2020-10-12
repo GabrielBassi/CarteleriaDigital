@@ -14,7 +14,7 @@ namespace CarteleriaDigital.Modelo
           public int TextoFijoId { get; set; }
         public string Nombre { get; set; }
         public string Path { get; set; }
-        public XDocument LeerInformacion()
+        public XDocument LeerInformacion(string pstring)
         {
             ControladorTextoFijo mControlador = new ControladorTextoFijo(UnidadDeTrabajo.Instancia);
 

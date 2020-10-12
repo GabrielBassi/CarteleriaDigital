@@ -9,6 +9,6 @@ namespace CarteleriaDigital.Modelo
 {
     public interface IEstrategiaTipoDatosFuente
     {
-        XDocument LeerInformacion();
+        XDocument LeerInformacion(string purl);
     }
 }

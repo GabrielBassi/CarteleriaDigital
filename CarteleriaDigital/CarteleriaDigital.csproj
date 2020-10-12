@@ -67,7 +67,6 @@
     <Compile Include="DAL\EntityFramework\RepositorioBanner.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioCampaña.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioEstrategiaTipoDatosFuente.cs" />
-    <Compile Include="DAL\EntityFramework\RepositorioFuenteRss.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioGeneral.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioImagen.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioRssUrl.cs" />
@@ -75,7 +74,6 @@
     <Compile Include="DAL\EntityFramework\UnidadDeTrabajo.cs" />
     <Compile Include="DAL\IRepositorioBanner.cs" />
     <Compile Include="DAL\IRepositorioCampaña.cs" />
-    <Compile Include="DAL\IRepositorioFuenteRssUrl.cs" />
     <Compile Include="DAL\IRepositorioGeneral.cs" />
     <Compile Include="DAL\IRepositorioImagen.cs" />
     <Compile Include="DAL\IRepositorioRssUrl.cs" />
@@ -87,6 +85,10 @@
     <Compile Include="Migrations\202009211954441_li.cs" />
     <Compile Include="Migrations\202009211954441_li.designer.cs">
       <DependentUpon>202009211954441_li.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010121600092_cambios.cs" />
+    <Compile Include="Migrations\202010121600092_cambios.designer.cs">
+      <DependentUpon>202010121600092_cambios.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\EstrategiaTipoDatosFuente.cs" />
@@ -103,6 +105,12 @@
     <Compile Include="Vistas\GestionCampaña.Designer.cs">
       <DependentUpon>GestionCampaña.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\IniciarCampañaBannerDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\IniciarCampañaBannerDia.Designer.cs">
+      <DependentUpon>IniciarCampañaBannerDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\MenuPrincipa%3b.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,7 +119,6 @@
     </Compile>
     <Compile Include="Modelo\Banner.cs" />
     <Compile Include="Modelo\Campaña.cs" />
-    <Compile Include="Modelo\FuenteRss.cs" />
     <Compile Include="Modelo\Imagen.cs" />
     <Compile Include="Modelo\RssUrl.cs" />
     <Compile Include="Modelo\TextoFijo.cs" />
@@ -119,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Migrations\202009211954441_li.resx">
       <DependentUpon>202009211954441_li.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010121600092_cambios.resx">
+      <DependentUpon>202010121600092_cambios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\GestionCampaña.resx">
       <DependentUpon>GestionCampaña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\IniciarCampañaBannerDia.resx">
+      <DependentUpon>IniciarCampañaBannerDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\MenuPrincipa%3b.resx">
       <DependentUpon>MenuPrincipa%3b.cs</DependentUpon>
@@ -153,7 +166,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Iconos\Play.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Iconos\+Imagen.png" />
   </ItemGroup>

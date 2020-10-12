@@ -14,7 +14,6 @@ namespace CarteleriaDigital.DAL
         IRepositorioBanner RepositorioBanner { get; }
         IRepositorioRssUrl RepositorioRssUrl { get; }
         IRepositorioTextoFijo RepositorioTextoFijo { get; }
-        IRepositorioFuenteRssUrl RepositorioFuenteRssUrl { get; }
         IRepositorioEstrategiaTipoDatosFuente RepositorioEstrategiaTipoDatos { get; }
 
         /// <summary>

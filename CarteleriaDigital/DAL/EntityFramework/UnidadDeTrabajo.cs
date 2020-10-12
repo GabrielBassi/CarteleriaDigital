@@ -20,7 +20,6 @@ namespace CarteleriaDigital.DAL.EntityFramework
             this.RepositorioImagen = new RepositorioImagen(this.iDbContext);
             this.RepositorioBanner = new RepositorioBanner(this.iDbContext);
             this.RepositorioRssUrl = new RepositorioRssUrl(this.iDbContext);
-            this.RepositorioFuenteRssUrl = new RepositorioFuenteRss(this.iDbContext);
             this.RepositorioTextoFijo = new RepositorioTextoFijo(this.iDbContext);
             this.RepositorioEstrategiaTipoDatos = new RepositorioEstrategiaTipoDatosFuente(this.iDbContext);
         }
@@ -31,9 +30,7 @@ namespace CarteleriaDigital.DAL.EntityFramework
         public IRepositorioImagen RepositorioImagen { get; private set; }
         public IRepositorioBanner RepositorioBanner { get; private set; }
         public IRepositorioRssUrl RepositorioRssUrl { get; private set; }
-        public IRepositorioFuenteRssUrl RepositorioFuenteRssUrl { get; private set; }
         public IRepositorioTextoFijo RepositorioTextoFijo { get; private set; }
-
         public IRepositorioEstrategiaTipoDatosFuente RepositorioEstrategiaTipoDatos { get; private set; }
 
         /// <summary>

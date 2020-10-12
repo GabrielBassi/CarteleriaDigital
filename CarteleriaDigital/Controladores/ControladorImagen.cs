@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CarteleriaDigital.DAL.EntityFramework;
+using CarteleriaDigital.DAL;
 using CarteleriaDigital.Modelo;
 
 namespace CarteleriaDigital.Controladores
 {
     class ControladorImagen
     {
-        private readonly UnidadDeTrabajo iUdT;
+        private readonly IUnidadDeTrabajo iUdT;
         int contador = 0;
         int aa = 0;
         //int jj = 0;
-        public ControladorImagen(UnidadDeTrabajo pUnidadDeTrabajo, int pAa, int pjj)
+        public ControladorImagen(IUnidadDeTrabajo pUnidadDeTrabajo, int pp, int aa)
         {
             this.iUdT = pUnidadDeTrabajo;
             //aa = pAa;
@@ -265,5 +261,6 @@ namespace CarteleriaDigital.Controladores
             }
             return control;
         }
+     
     }
 }

@@ -11,5 +11,7 @@ namespace CarteleriaDigital.DAL
     {
         Campaña ExistenciaCampaña(string pNombre);
         bool ExisteCampañaPorNombre(string pNombre);
+        IList<Campaña> BuscarCampañaActivos();
+        IList<Campaña> BuscarCampañaActivosRango();
     }
 }

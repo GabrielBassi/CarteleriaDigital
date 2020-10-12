@@ -31,3 +31,5 @@ C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaD
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionBanner.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.csprojAssemblyReference.cache
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.li.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.IniciarCampañaBannerDia.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.cambios.resources

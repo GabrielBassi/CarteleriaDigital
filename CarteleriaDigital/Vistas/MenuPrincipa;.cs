@@ -20,7 +20,7 @@ namespace CarteleriaDigital
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
+            
 
         }
 
@@ -34,6 +34,49 @@ namespace CarteleriaDigital
         {
             GestionBanner mGestionBanner = new GestionBanner();
             mGestionBanner.ShowDialog();
+        }
+
+        private void btnIniciar_Click(object sender, EventArgs e)
+        {
+            this.pBarCarga.Increment(20);
+            this.timerCarga.Start();
+            this.pBarCarga.Increment(40);
+            lblCargaBarra.Text = pBarCarga.Value.ToString() + "%";
+            this.pBarCarga.Increment(60);
+            if (pBarCarga.Value == pBarCarga.Maximum)
+            {
+
+                timerCarga.Stop();
+             //   this.Hide();
+
+            }
+            this.pBarCarga.Increment(80);
+            IniciarCampañaBannerDia mIniciarCampañaBannerDia = new IniciarCampañaBannerDia();
+            mIniciarCampañaBannerDia.Show();
+        }
+
+        public void barraDeCarga()
+        {
+            this.timerCarga.Start();
+            this.pBarCarga.Increment(100);
+            lblCargaBarra.Text = pBarCarga.Value.ToString() + "%";
+            if (pBarCarga.Value == pBarCarga.Maximum) ;
+            {
+                
+                timerCarga.Stop();
+                //this.Hide();
+            }
+
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //barraDeCarga();
+        }
+
+        private void pBarCarga_Click(object sender, EventArgs e)
+        {
+            ProgressBar pBar = new ProgressBar();
+
         }
     }
 }

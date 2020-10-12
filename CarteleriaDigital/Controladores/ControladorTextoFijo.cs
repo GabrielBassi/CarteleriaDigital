@@ -94,7 +94,6 @@ namespace CarteleriaDigital.Controladores
         {
             txtNombreTextoFijoMod.Text = pTextoFijo.Nombre;
             var contenido = XDocument.Load(pTextoFijo.Path);
-          //  txtDescripModTexFijo.Text = Convert.ToString(contenido);
             foreach (var item in contenido.Elements())
             {
                 txtDescripModTexFijo.Text = item.Element("description").Value;

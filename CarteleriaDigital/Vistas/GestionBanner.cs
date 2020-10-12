@@ -55,13 +55,15 @@ namespace CarteleriaDigital.Vistas
                         throw new ExisteNombre("Ya existe un Banner con ese nombre");
                     }
                 }
-
+              
                 DateTime pFechaInicio = new DateTime(this.dTPickFechaDesdeBan.Value.Year, this.dTPickFechaDesdeBan.Value.Month, this.dTPickFechaDesdeBan.Value.Day, Convert.ToInt32(this.nUpDesdeHoraAgregarBan.Text), 0, 0);
                 DateTime pFechaFin = new DateTime(this.dTPickFechaHastaBan.Value.Year, this.dTPickFechaHastaBan.Value.Month, this.dTPickFechaHastaBan.Value.Day, Convert.ToInt32(this.nUpHastaHoraAgregarBan.Text), 0, 0);
+                iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 int pHoraInicio = Convert.ToInt32(nUpDesdeHoraAgregarBan.Value);
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraAgregarBan.Value);
-                iControl.ValidarFecha(pFechaInicio, pFechaFin);
+              
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
+
 
                 if (cBoxFuenteDatosAgregBanner.Text == "Texto Fijo") 
                 {
