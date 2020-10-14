@@ -112,7 +112,6 @@
             this.tbCtrlAgregar.Size = new System.Drawing.Size(1030, 727);
             this.tbCtrlAgregar.TabIndex = 0;
             this.tbCtrlAgregar.Text = "Agregar";
-            this.tbCtrlAgregar.Click += new System.EventHandler(this.TbCtrlAgregar_Click);
             // 
             // btnAceptarCampaña
             // 
@@ -168,18 +167,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nUDuracionAgregar.Increment = new decimal(new int[] {
-            5,
+            10,
             0,
             0,
             0});
             this.nUDuracionAgregar.Location = new System.Drawing.Point(272, 111);
             this.nUDuracionAgregar.Maximum = new decimal(new int[] {
-            15,
+            30,
             0,
             0,
             0});
             this.nUDuracionAgregar.Minimum = new decimal(new int[] {
-            5,
+            10,
             0,
             0,
             0});
@@ -188,7 +187,7 @@
             this.nUDuracionAgregar.TabIndex = 18;
             this.nUDuracionAgregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nUDuracionAgregar.Value = new decimal(new int[] {
-            5,
+            10,
             0,
             0,
             0});
@@ -473,14 +472,19 @@
             this.nUDuracionMod.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.nUDuracionMod.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.nUDuracionMod.Location = new System.Drawing.Point(315, 118);
             this.nUDuracionMod.Maximum = new decimal(new int[] {
-            15,
+            30,
             0,
             0,
             0});
             this.nUDuracionMod.Minimum = new decimal(new int[] {
-            5,
+            10,
             0,
             0,
             0});
@@ -489,7 +493,7 @@
             this.nUDuracionMod.TabIndex = 32;
             this.nUDuracionMod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nUDuracionMod.Value = new decimal(new int[] {
-            5,
+            20,
             0,
             0,
             0});

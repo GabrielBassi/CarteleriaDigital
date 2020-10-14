@@ -59,11 +59,12 @@ namespace CarteleriaDigital.Vistas
                 DateTime pFechaInicio = new DateTime(this.dTPickFechaDesdeBan.Value.Year, this.dTPickFechaDesdeBan.Value.Month, this.dTPickFechaDesdeBan.Value.Day, Convert.ToInt32(this.nUpDesdeHoraAgregarBan.Text), 0, 0);
                 DateTime pFechaFin = new DateTime(this.dTPickFechaHastaBan.Value.Year, this.dTPickFechaHastaBan.Value.Month, this.dTPickFechaHastaBan.Value.Day, Convert.ToInt32(this.nUpHastaHoraAgregarBan.Text), 0, 0);
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
+                
                 int pHoraInicio = Convert.ToInt32(nUpDesdeHoraAgregarBan.Value);
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraAgregarBan.Value);
-              
+                
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
-
+                iControl.ValidarRangoHora(pHoraInicio, pHoraFin);
 
                 if (cBoxFuenteDatosAgregBanner.Text == "Texto Fijo") 
                 {
@@ -103,7 +104,7 @@ namespace CarteleriaDigital.Vistas
                 iControladorBanner.AgregarBanner(txtNomAgregarBanner.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, cBoxFuenteDatosAgregBanner.Text, pDatosEstrategia);                
                 MessageBox.Show("El banner se registro correctamente", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarPantallaAlta();
-                iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
+            
             }
 
             catch (FaltanDatosObligatorios msg)
@@ -155,13 +156,15 @@ namespace CarteleriaDigital.Vistas
             if (tabCtrlBanner.SelectedIndex == 0)
             {
                 LimpiarPantallaAlta();
-                iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
+              //  iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
             }
             else if (tabCtrlBanner.SelectedIndex == 1)
             {
                 LimpiarPantallaMod();
                 iControladorRssUrl.CargarRssActivos(cBoxModRss);
                 iControladorTextoFijo.CargarTextoFijoActivos(CmbModTextoFijo);
+                cboxBuscarBannerMod.Items.Clear();
+                iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
             }
 
         }
@@ -186,7 +189,9 @@ namespace CarteleriaDigital.Vistas
             cBoxModRss.Items.Clear();
             cBoxModRss.Text = "";
             cBoxFuenteModBanner.SelectedItem = null;
+            cBoxFuenteDatosAgregBanner.SelectedItem = null;
             CmbModTextoFijo.Items.Clear();
+            
 
         }
         private void LimpiarPantallaMod()
@@ -196,14 +201,18 @@ namespace CarteleriaDigital.Vistas
             dTPickFechaHastaModBan.Value = DateTime.Now;
             nUpDesdeHoraModBan.Value = 0;
             nUpHastaHoraModBan.Value = 0;
-            cboxBuscarBannerMod.Text = "";
+            cboxBuscarBannerMod.SelectedItem = null;
             txtNombreTextoFijo.Text = "";
             txtDescripTextoFijo.Text = "";
             cBoxFuenteModBanner.Text = "";
             txtNombreTextoFijoMod.Text = "";
             txtDescripModTexFijo.Text = "";
             cBoxFuenteDatosAgregBanner.SelectedItem = null;
+            cBoxFuenteModBanner.SelectedItem = null;
             CmbModTextoFijo.SelectedItem = null;
+            txtNombreModRss.Text = "";
+            txtModUrl.Text = "";
+          
         }
 
         private void btnModVolverBanner_Click(object sender, EventArgs e)
@@ -228,6 +237,7 @@ namespace CarteleriaDigital.Vistas
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraModBan.Value);
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
+                iControl.ValidarRangoHora(pHoraInicio, pHoraFin);
                 if (cBoxFuenteModBanner.Text == "Texto Fijo")
                 {
                     if (string.IsNullOrWhiteSpace(txtNombreTextoFijoMod.Text) || (string.IsNullOrWhiteSpace(txtDescripModTexFijo.Text)))
@@ -308,8 +318,9 @@ namespace CarteleriaDigital.Vistas
                 {
                     iControladorBanner.EliminarBanner(mBannerMod);
                     MessageBox.Show("El banner se eliminó correctamente", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cboxBuscarBannerMod.Items.Clear();
                     LimpiarPantallaMod();
+                    cboxBuscarBannerMod.Text = "";
+                    cboxBuscarBannerMod.Items.Clear();
                     iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
                 }
 
@@ -324,13 +335,17 @@ namespace CarteleriaDigital.Vistas
         {
             try
             {
-                mBannerMod = iControladorBanner.BuscarBannerPorNombre(cboxBuscarBannerMod.Text);
-                iControladorBanner.CargarBannerModificar(mBannerMod, txtNomBannerMod, dTPickFechaDesdeModBan, dTPickFechaHastaModBan, nUpDesdeHoraModBan, nUpHastaHoraModBan, cBoxFuenteModBanner, txtNombreTextoFijoMod, txtDescripModTexFijo, txtNombreModRss, txtModUrl);
-                if (mBannerMod.EstrategiaTipoDatosFuente.NombreTipoDeEstrategia == "Texto Fijo")
+                if (cboxBuscarBannerMod.Text!="")
                 {
-                    int idtF = Convert.ToInt32(mBannerMod.EstrategiaTipoDatosFuente.DatosEstrategiaId);
-                    idDatosTipoFuente = iControladorTextoFijo.Obtener(idtF).TextoFijoId;
+                    mBannerMod = iControladorBanner.BuscarBannerPorNombre(cboxBuscarBannerMod.Text);
+                    iControladorBanner.CargarBannerModificar(mBannerMod, txtNomBannerMod, dTPickFechaDesdeModBan, dTPickFechaHastaModBan, nUpDesdeHoraModBan, nUpHastaHoraModBan, cBoxFuenteModBanner, txtNombreTextoFijoMod, txtDescripModTexFijo, txtNombreModRss, txtModUrl);
+                    if (mBannerMod.EstrategiaTipoDatosFuente.NombreTipoDeEstrategia == "Texto Fijo")
+                    {
+                        int idtF = Convert.ToInt32(mBannerMod.EstrategiaTipoDatosFuente.DatosEstrategiaId);
+                        idDatosTipoFuente = iControladorTextoFijo.Obtener(idtF).TextoFijoId;
+                    }
                 }
+              
             }
             catch (Exception)
             {
@@ -363,7 +378,6 @@ namespace CarteleriaDigital.Vistas
             {
                 mTextoFijo = iControladorTextoFijo.BuscarTextoFijoPorNombre(CmbModTextoFijo.Text);
                 idDatosTipoFuente = mTextoFijo.TextoFijoId;
-                //  iControladorTextoFijo.
                 iControladorTextoFijo.CargarTextoFijoModificar(mTextoFijo, txtNombreTextoFijoMod, txtDescripModTexFijo);
             }
             catch (Exception)

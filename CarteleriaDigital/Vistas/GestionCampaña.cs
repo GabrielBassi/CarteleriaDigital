@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CarteleriaDigital.Excepciones;
 using CarteleriaDigital.Controladores;
@@ -23,7 +18,8 @@ namespace CarteleriaDigital.Vistas
         Campaña mCampañaMod;
         Controles iControl;
         IList<Imagen> listaImagenes = new List<Imagen>();
-        IList<Imagen> listaImagenesMod = new List<Imagen>();
+       // IList<Imagen> listaImagenesMod = new List<Imagen>();
+        IList<int> listaImagenesMod = new List<int>();
         int aa = 20;
         int jj = 35;
         int contador = 0;
@@ -38,11 +34,8 @@ namespace CarteleriaDigital.Vistas
 
         }
 
-        private void TbCtrlAgregar_Click(object sender, EventArgs e)
-        {
 
-        }
-
+        //Evento que se activa al presionar el boton aceptar en campaña, la cual agregar una nueva campaña con los datos de la misma.
         private void BtnAceptarCampaña_Click(object sender, EventArgs e)
         {
             try
@@ -68,7 +61,7 @@ namespace CarteleriaDigital.Vistas
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraAgregar.Value); ;
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
-
+                iControl.ValidarRangoHora(pHoraInicio, pHoraFin);
 
                 if (listaImagenes.Count == 0)
                 {
@@ -101,11 +94,15 @@ namespace CarteleriaDigital.Vistas
             }
         }
 
+        /// <summary>
+        ///Evento que cargar las imagenes cuando se crea una nueva campaña. 
+        /// </summary>
+
         private void CargarImag_Click(object sender, EventArgs e)
         {
             try
             {
-                iControladorImagen.CargarImagenes(listaImagenes, gBoxImagenes, contador);
+                iControladorImagen.CargarImagenes(listaImagenes, gBoxImagenes, contador, listaImagenesMod);
                 contador += 1;
             }
             catch (Exception)
@@ -141,10 +138,9 @@ namespace CarteleriaDigital.Vistas
 
         private void CargarImagMod_Click(object sender, EventArgs e)
         {
-            control = iControladorImagen.CargarImagenesMod(mCampañaMod.ListaImagenes, listaImagenesMod, gBoxImagenMod);
+            control = iControladorImagen.CargarImagenesMod(mCampañaMod.ListaImagenes, listaImagenesMod, gBoxImagenMod, contador);
+            contador++;
         }
-
-
         private void GestionCampaña_Load(object sender, EventArgs e)
         {
             dTPickFechaDesde.Value = DateTime.Today;
@@ -177,6 +173,17 @@ namespace CarteleriaDigital.Vistas
             gBoxImagenes.Controls.Clear();
             listaImagenes.Clear();
             listaImagenes = new List<Imagen>();
+            contador = 0;
+            aa = 20;
+            jj = 35;
+            int s = listaImagenesMod.ElementAt(0);
+            int ss = mCampañaMod.ListaImagenes.Count;
+            for (int i = s; i < ss; i++)
+            {
+                mCampañaMod.ListaImagenes.RemoveAt(s);
+            }
+            listaImagenesMod.Clear();
+           
         }
         private void LimpiarPantallaMod()
         {
@@ -213,10 +220,10 @@ namespace CarteleriaDigital.Vistas
                 int pHoraFin = Convert.ToInt32(nUpHastaHoraMod.Value);
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
-
+                iControl.ValidarRangoHora(pHoraInicio, pHoraFin);
                 if (control == true)
                 {
-                    iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), listaImagenesMod);
+                    iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), mCampañaMod.ListaImagenes);
                 }
                 else
                 {
@@ -247,7 +254,6 @@ namespace CarteleriaDigital.Vistas
                     MessageBox.Show("Se eliminó correctamente", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cBoxModCampActivas.Items.Clear();
                     LimpiarPantallaMod();
-                    iControladorCampaña.CargarCampañasActivasComboBox(cBoxModCampActivas);
                 }
 
             }

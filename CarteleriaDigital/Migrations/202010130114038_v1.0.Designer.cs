@@ -7,13 +7,13 @@ namespace CarteleriaDigital.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class li : IMigrationMetadata
+    public sealed partial class v10 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(li));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(v10));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009211954441_li"; }
+            get { return "202010130114038_v1.0"; }
         }
         
         string IMigrationMetadata.Source

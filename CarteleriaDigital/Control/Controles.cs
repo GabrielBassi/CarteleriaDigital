@@ -35,6 +35,13 @@ namespace CarteleriaDigital.Control
                 throw new ExcepcionControlFechas("La hora de fin debe ser mayor la hora de inicio");
             }
         }
+        public void ValidarRangoHora(int pHoraInicio, int pHoraFin)
+        {
+            if (pHoraFin- pHoraInicio>1)
+            {
+                throw new ExcepcionControlFechas("El rango no puede exceder más de 1 hora");
+            }
+        }
     }
 }
 

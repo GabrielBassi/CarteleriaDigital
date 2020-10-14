@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,7 @@ namespace CarteleriaDigital.Vistas
 
         private void timerCampañas_Tick(object sender, EventArgs e)
         {
+          
             if (listaCampaña.Count > 0)
             {
                 int i = 0;
@@ -59,10 +61,12 @@ namespace CarteleriaDigital.Vistas
                     var mPath = (listaPath[iIndiceImagen]);
                     iIndiceImagen++;
                     pBoxCampañas.Image = Image.FromFile(mPath);
+                 
                 }
+              
             }
-            listaTiempo.Clear();
-            listaPath.Clear();
+            ////listaTiempo.Clear();
+            ////listaPath.Clear();
         }
 
         private void timerBanner_Tick(object sender, EventArgs e)
@@ -107,8 +111,8 @@ namespace CarteleriaDigital.Vistas
             timerCampañas.Start();
             timerControl.Start();
             
-            listaBanner = iControladorBanner.BuscarBannerActivosHoy();
-            listaCampaña = iControladorCampaña.BuscarCampañaActivosHoy();
+            //listaBanner = iControladorBanner.BuscarBannerActivosHoy();
+           // listaCampaña = iControladorCampaña.BuscarCampañaActivosHoy();
         }
 
         private void timerControl_Tick(object sender, EventArgs e)
@@ -123,7 +127,8 @@ namespace CarteleriaDigital.Vistas
             }
             if (listaCampaña.Count == 0)
             {
-                pBoxCampañas.Image = null; //SE PODRIA AGREGAR UNA IMAGEN GENÉRICA...
+                string ruta = "C:\\Users\\Harry\\Desktop\\CarteleriaDigital\\ImagenesCampañas";
+                pBoxCampañas.Image = Image.FromFile(ruta+"\\publicite.jpg");
             }
         }
     }

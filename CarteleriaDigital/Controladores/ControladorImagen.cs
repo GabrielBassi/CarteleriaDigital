@@ -29,7 +29,9 @@ namespace CarteleriaDigital.Controladores
             pListaImagenes.Add(iImagen);
             return pListaImagenes;
         }
-        public void CargarImagenes(IList<Imagen> listaImagenes, GroupBox gBoxImagen, int pContador)
+
+        //Metodo que controla la cantidad de imagenes a cargar.
+        public void CargarImagenes(IList<Imagen> listaImagenes, GroupBox gBoxImagen, int pContador, IList<int> pListaImagenMod)
         {
             contador = pContador;
             contador += 1;
@@ -42,49 +44,49 @@ namespace CarteleriaDigital.Controladores
             {
                 if (contador == 1)
                 {
-                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 20, 35);
+                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 20, 35, pListaImagenMod);
                 }
                 else
                 {
                     if (contador == 2)
                     {
-                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 35);
+                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 35, pListaImagenMod);
                     }
                     else
                     {
                         if (contador == 3)
                         {
-                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 35);
+                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 35, pListaImagenMod);
                         }
                         else
                         {
                             if (contador == 4)
                             {
-                                CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 35);
+                                CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 35, pListaImagenMod);
                             }
                             else
                             {
                                 if (contador == 5)
                                 {
-                                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 20, 210);
+                                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 20, 210, pListaImagenMod);
                                 }
                                 else
                                 {
                                     if (contador == 6)
                                     {
-                                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 210);
+                                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 210, pListaImagenMod);
                                     }
                                     else
                                     {
                                         if (contador == 7)
                                         {
-                                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 210);
+                                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 210, pListaImagenMod);
                                         }
                                         else
                                         {
                                             if (contador == 8)
                                             {
-                                                CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 210);
+                                                CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 210, pListaImagenMod);
                                             }
                                             else
                                             {
@@ -100,7 +102,8 @@ namespace CarteleriaDigital.Controladores
             }
         }
 
-        public void CargoPictureBox(OpenFileDialog CargarImagen, IList<Imagen> pLista, GroupBox gBoxImagen, int aa, int jj)
+        //Metodo que carga las imagenes en el group box imagenes a visualizar.
+        public void CargoPictureBox(OpenFileDialog CargarImagen, IList<Imagen> pLista, GroupBox gBoxImagen, int aa, int jj,IList<int> pListaImagenMod)
         {
             PictureBox imagPic = new PictureBox();
             gBoxImagen.Controls.Add(imagPic);
@@ -113,8 +116,12 @@ namespace CarteleriaDigital.Controladores
             imagPic.Tag = CargarImagen.FileName;
             string nombre = Path.GetFileName(imagPic.Tag.ToString());
             AgregarImagen(nombre, RutaImagen, pLista);
+            int cantLista = (pLista.Count)-1;
+            pListaImagenMod.Add(cantLista);
+
         }
 
+        
         public void CargoPictureBoxModificar(IList<Imagen> pLista, GroupBox gBoxImagenMod, int aa, int jj)
         {
             if (pLista.Count <= 4)
@@ -195,10 +202,14 @@ namespace CarteleriaDigital.Controladores
             return mLista;
         }
 
-        public bool CargarImagenesMod(IList<Imagen> listaImagenes, IList<Imagen> pListaImagenMod, GroupBox gBoxImagen) // es el que anda
+        //IList<Imagen> pListaImagenMod controlar que este parámetro no se usa....
+        //el problema es con el contador que no se reinicia
+        public bool CargarImagenesMod(IList<Imagen> listaImagenes, IList<int> pListaImagenMod, GroupBox gBoxImagen,int pContador)
         {
-            bool control = false;
+            contador = pContador;
             contador += 1;
+            bool control = false;
+           // contador += 1;
             OpenFileDialog CargarImagen = new OpenFileDialog();
             CargarImagen.Filter = "Imágenes(*.jpg, *.gif, *.bmp)|*.jpg;*.gif;*.png";
 
@@ -208,43 +219,43 @@ namespace CarteleriaDigital.Controladores
             {
                 if (listaImagenes.Count == 1)
                 {
-                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 35);
+                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 35, pListaImagenMod);
                 }
                 else
                 {
                     if (listaImagenes.Count == 2)
                     {
-                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 35);
+                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 35, pListaImagenMod);
                     }
                     else
                     {
                         if (listaImagenes.Count == 3)
                         {
-                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 35);
+                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 35, pListaImagenMod);
                         }
                         else
                         {
                             if (listaImagenes.Count == 4)
                             {
-                                CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 20, 210);
+                                CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 20, 210, pListaImagenMod);
                             }
                             else
                             {
                                 if (listaImagenes.Count == 5)
                                 {
-                                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 210);
+                                    CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 210, 210, pListaImagenMod);
                                 }
                                 else
                                 {
                                     if (listaImagenes.Count == 6)
                                     {
-                                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 210);
+                                        CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 400, 210, pListaImagenMod);
                                     }
                                     else
                                     {
                                         if (listaImagenes.Count == 7)
                                         {
-                                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 210);
+                                            CargoPictureBox(CargarImagen, listaImagenes, gBoxImagen, 590, 210, pListaImagenMod);
                                         }
                                         else
                                         {

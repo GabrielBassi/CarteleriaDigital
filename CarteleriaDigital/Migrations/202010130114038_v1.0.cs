@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class li : DbMigration
+    public partial class v10 : DbMigration
     {
         public override void Up()
         {
@@ -61,19 +61,6 @@
                 .Index(t => t.Campaña_CampañaId);
             
             CreateTable(
-                "dbo.FuenteRsses",
-                c => new
-                    {
-                        FuenteRssId = c.Int(nullable: false, identity: true),
-                        Titulo = c.String(),
-                        Descripcion = c.String(),
-                        RssUrl_RssUrlId = c.Int(),
-                    })
-                .PrimaryKey(t => t.FuenteRssId)
-                .ForeignKey("dbo.RssUrls", t => t.RssUrl_RssUrlId)
-                .Index(t => t.RssUrl_RssUrlId);
-            
-            CreateTable(
                 "dbo.RssUrls",
                 c => new
                     {
@@ -97,15 +84,12 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.FuenteRsses", "RssUrl_RssUrlId", "dbo.RssUrls");
             DropForeignKey("dbo.Imagens", "Campaña_CampañaId", "dbo.Campaña");
             DropForeignKey("dbo.Banners", "EstrategiaTipoDatosFuente_EstrategiaTipoDatosFuenteId", "dbo.EstrategiaTipoDatosFuentes");
-            DropIndex("dbo.FuenteRsses", new[] { "RssUrl_RssUrlId" });
             DropIndex("dbo.Imagens", new[] { "Campaña_CampañaId" });
             DropIndex("dbo.Banners", new[] { "EstrategiaTipoDatosFuente_EstrategiaTipoDatosFuenteId" });
             DropTable("dbo.TextoFijoes");
             DropTable("dbo.RssUrls");
-            DropTable("dbo.FuenteRsses");
             DropTable("dbo.Imagens");
             DropTable("dbo.Campaña");
             DropTable("dbo.EstrategiaTipoDatosFuentes");

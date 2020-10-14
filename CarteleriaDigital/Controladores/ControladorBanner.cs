@@ -88,7 +88,7 @@ namespace CarteleriaDigital.Controladores
         }
 
         /// <summary>
-        /// Este metodo cumple la función de cargar un banner para su modificación.
+        /// Este metodo cumple la función de cargar un banner para modificar comprobando el tipo de fuente si es texto fijo o rss..
         /// </summary>
         /// <param name="mBannerMod"></param>
         /// <param name="txtNomBannerMod"></param>
@@ -103,7 +103,7 @@ namespace CarteleriaDigital.Controladores
         /// <param name="txtModUrl"></param>
         public void CargarBannerModificar(Banner mBannerMod, TextBox txtNomBannerMod, DateTimePicker dTPickFechaDesdeModBan, DateTimePicker dTPickFechaHastaModBan, NumericUpDown nUpDesdeHoraModBan, NumericUpDown nUpHastaHoraModBan, ComboBox cBoxFuenteModBanner, TextBox txtNombreTextoFijoMod, TextBox txtDescripModTexFijo, TextBox txtNombreModRss, TextBox txtModUrl)
         {
-            txtNomBannerMod.Text = mBannerMod.NombreBanner;
+            txtNomBannerMod.Text = mBannerMod.NombreBanner; //Error despues de borrar un texto fijo
             dTPickFechaDesdeModBan.Value = mBannerMod.FechaInicio;
             dTPickFechaHastaModBan.Value = mBannerMod.FechaFin;
             nUpDesdeHoraModBan.Value = Convert.ToDecimal(mBannerMod.HoraInicio.Hours);
@@ -132,7 +132,6 @@ namespace CarteleriaDigital.Controladores
                 txtModUrl.Text = mRssUrl.Url;
             }
         }
-
 
         internal bool ConsultarExistenciaNombreBanner(string pNombreBanner)
         {

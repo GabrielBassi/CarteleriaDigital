@@ -30,11 +30,6 @@
         {
             this.tabCtrlBanner = new System.Windows.Forms.TabControl();
             this.tabAgregarBanner = new System.Windows.Forms.TabPage();
-            this.gBoxRss = new System.Windows.Forms.GroupBox();
-            this.lblUrlAceptarRss = new System.Windows.Forms.Label();
-            this.lblNomAceptarRss = new System.Windows.Forms.Label();
-            this.txtUrlAgregarRssUrl = new System.Windows.Forms.TextBox();
-            this.txtNomAceptarRss = new System.Windows.Forms.TextBox();
             this.btnAceptarBanner = new System.Windows.Forms.Button();
             this.BtnVolverBanner = new System.Windows.Forms.Button();
             this.gBoxAgregarBanner = new System.Windows.Forms.GroupBox();
@@ -57,6 +52,11 @@
             this.lblInfoTextoFijoAgregar = new System.Windows.Forms.Label();
             this.txtNombreTextoFijo = new System.Windows.Forms.TextBox();
             this.lblTextoFijoAgregar = new System.Windows.Forms.Label();
+            this.gBoxRss = new System.Windows.Forms.GroupBox();
+            this.lblUrlAceptarRss = new System.Windows.Forms.Label();
+            this.lblNomAceptarRss = new System.Windows.Forms.Label();
+            this.txtUrlAgregarRssUrl = new System.Windows.Forms.TextBox();
+            this.txtNomAceptarRss = new System.Windows.Forms.TextBox();
             this.tabModBanner = new System.Windows.Forms.TabPage();
             this.btnModificarBanner = new System.Windows.Forms.Button();
             this.btnModVolverBanner = new System.Windows.Forms.Button();
@@ -78,13 +78,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.gBoxModTextoFijo = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.CmbModTextoFijo = new System.Windows.Forms.ComboBox();
-            this.txtDescripModTexFijo = new System.Windows.Forms.TextBox();
-            this.lblDescripMod = new System.Windows.Forms.Label();
-            this.txtNombreTextoFijoMod = new System.Windows.Forms.TextBox();
-            this.lblNomModTexFij = new System.Windows.Forms.Label();
             this.gBoxModRss = new System.Windows.Forms.GroupBox();
             this.cBoxModRss = new System.Windows.Forms.ComboBox();
             this.txtModUrl = new System.Windows.Forms.TextBox();
@@ -92,19 +85,26 @@
             this.lblModRss = new System.Windows.Forms.Label();
             this.lblNombreModRss = new System.Windows.Forms.Label();
             this.lblBuscarModRss = new System.Windows.Forms.Label();
+            this.gBoxModTextoFijo = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.CmbModTextoFijo = new System.Windows.Forms.ComboBox();
+            this.txtDescripModTexFijo = new System.Windows.Forms.TextBox();
+            this.lblDescripMod = new System.Windows.Forms.Label();
+            this.txtNombreTextoFijoMod = new System.Windows.Forms.TextBox();
+            this.lblNomModTexFij = new System.Windows.Forms.Label();
             this.tabCtrlBanner.SuspendLayout();
             this.tabAgregarBanner.SuspendLayout();
-            this.gBoxRss.SuspendLayout();
             this.gBoxAgregarBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraAgregarBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraAgregarBan)).BeginInit();
             this.gBoxTextoFijo.SuspendLayout();
+            this.gBoxRss.SuspendLayout();
             this.tabModBanner.SuspendLayout();
             this.gBoxModBanner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraModBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraModBan)).BeginInit();
-            this.gBoxModTextoFijo.SuspendLayout();
             this.gBoxModRss.SuspendLayout();
+            this.gBoxModTextoFijo.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabCtrlBanner
@@ -122,64 +122,17 @@
             // tabAgregarBanner
             // 
             this.tabAgregarBanner.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.tabAgregarBanner.Controls.Add(this.gBoxRss);
             this.tabAgregarBanner.Controls.Add(this.btnAceptarBanner);
             this.tabAgregarBanner.Controls.Add(this.BtnVolverBanner);
             this.tabAgregarBanner.Controls.Add(this.gBoxAgregarBanner);
             this.tabAgregarBanner.Controls.Add(this.gBoxTextoFijo);
+            this.tabAgregarBanner.Controls.Add(this.gBoxRss);
             this.tabAgregarBanner.Location = new System.Drawing.Point(4, 29);
             this.tabAgregarBanner.Name = "tabAgregarBanner";
             this.tabAgregarBanner.Padding = new System.Windows.Forms.Padding(3);
             this.tabAgregarBanner.Size = new System.Drawing.Size(795, 509);
             this.tabAgregarBanner.TabIndex = 0;
             this.tabAgregarBanner.Text = "Agregar";
-            // 
-            // gBoxRss
-            // 
-            this.gBoxRss.BackColor = System.Drawing.Color.Silver;
-            this.gBoxRss.Controls.Add(this.lblUrlAceptarRss);
-            this.gBoxRss.Controls.Add(this.lblNomAceptarRss);
-            this.gBoxRss.Controls.Add(this.txtUrlAgregarRssUrl);
-            this.gBoxRss.Controls.Add(this.txtNomAceptarRss);
-            this.gBoxRss.Location = new System.Drawing.Point(7, 197);
-            this.gBoxRss.Name = "gBoxRss";
-            this.gBoxRss.Size = new System.Drawing.Size(780, 222);
-            this.gBoxRss.TabIndex = 24;
-            this.gBoxRss.TabStop = false;
-            this.gBoxRss.Text = "Rss";
-            this.gBoxRss.Visible = false;
-            // 
-            // lblUrlAceptarRss
-            // 
-            this.lblUrlAceptarRss.AutoSize = true;
-            this.lblUrlAceptarRss.Location = new System.Drawing.Point(109, 126);
-            this.lblUrlAceptarRss.Name = "lblUrlAceptarRss";
-            this.lblUrlAceptarRss.Size = new System.Drawing.Size(121, 20);
-            this.lblUrlAceptarRss.TabIndex = 3;
-            this.lblUrlAceptarRss.Text = "Dirección Url";
-            // 
-            // lblNomAceptarRss
-            // 
-            this.lblNomAceptarRss.AutoSize = true;
-            this.lblNomAceptarRss.Location = new System.Drawing.Point(109, 67);
-            this.lblNomAceptarRss.Name = "lblNomAceptarRss";
-            this.lblNomAceptarRss.Size = new System.Drawing.Size(74, 20);
-            this.lblNomAceptarRss.TabIndex = 2;
-            this.lblNomAceptarRss.Text = "Nombre";
-            // 
-            // txtUrlAgregarRssUrl
-            // 
-            this.txtUrlAgregarRssUrl.Location = new System.Drawing.Point(282, 126);
-            this.txtUrlAgregarRssUrl.Name = "txtUrlAgregarRssUrl";
-            this.txtUrlAgregarRssUrl.Size = new System.Drawing.Size(245, 27);
-            this.txtUrlAgregarRssUrl.TabIndex = 1;
-            // 
-            // txtNomAceptarRss
-            // 
-            this.txtNomAceptarRss.Location = new System.Drawing.Point(282, 63);
-            this.txtNomAceptarRss.Name = "txtNomAceptarRss";
-            this.txtNomAceptarRss.Size = new System.Drawing.Size(245, 27);
-            this.txtNomAceptarRss.TabIndex = 0;
             // 
             // btnAceptarBanner
             // 
@@ -373,13 +326,14 @@
             // 
             // gBoxTextoFijo
             // 
+            this.gBoxTextoFijo.BackColor = System.Drawing.Color.Silver;
             this.gBoxTextoFijo.Controls.Add(this.txtDescripTextoFijo);
             this.gBoxTextoFijo.Controls.Add(this.lblInfoTextoFijoAgregar);
             this.gBoxTextoFijo.Controls.Add(this.txtNombreTextoFijo);
             this.gBoxTextoFijo.Controls.Add(this.lblTextoFijoAgregar);
-            this.gBoxTextoFijo.Location = new System.Drawing.Point(7, 197);
+            this.gBoxTextoFijo.Location = new System.Drawing.Point(7, 202);
             this.gBoxTextoFijo.Name = "gBoxTextoFijo";
-            this.gBoxTextoFijo.Size = new System.Drawing.Size(780, 222);
+            this.gBoxTextoFijo.Size = new System.Drawing.Size(782, 230);
             this.gBoxTextoFijo.TabIndex = 26;
             this.gBoxTextoFijo.TabStop = false;
             this.gBoxTextoFijo.Text = "Texto fijo";
@@ -419,6 +373,53 @@
             this.lblTextoFijoAgregar.TabIndex = 0;
             this.lblTextoFijoAgregar.Text = "Nombre";
             // 
+            // gBoxRss
+            // 
+            this.gBoxRss.BackColor = System.Drawing.Color.Silver;
+            this.gBoxRss.Controls.Add(this.lblUrlAceptarRss);
+            this.gBoxRss.Controls.Add(this.lblNomAceptarRss);
+            this.gBoxRss.Controls.Add(this.txtUrlAgregarRssUrl);
+            this.gBoxRss.Controls.Add(this.txtNomAceptarRss);
+            this.gBoxRss.Location = new System.Drawing.Point(7, 202);
+            this.gBoxRss.Name = "gBoxRss";
+            this.gBoxRss.Size = new System.Drawing.Size(782, 230);
+            this.gBoxRss.TabIndex = 24;
+            this.gBoxRss.TabStop = false;
+            this.gBoxRss.Text = "Rss";
+            this.gBoxRss.Visible = false;
+            // 
+            // lblUrlAceptarRss
+            // 
+            this.lblUrlAceptarRss.AutoSize = true;
+            this.lblUrlAceptarRss.Location = new System.Drawing.Point(109, 126);
+            this.lblUrlAceptarRss.Name = "lblUrlAceptarRss";
+            this.lblUrlAceptarRss.Size = new System.Drawing.Size(121, 20);
+            this.lblUrlAceptarRss.TabIndex = 3;
+            this.lblUrlAceptarRss.Text = "Dirección Url";
+            // 
+            // lblNomAceptarRss
+            // 
+            this.lblNomAceptarRss.AutoSize = true;
+            this.lblNomAceptarRss.Location = new System.Drawing.Point(109, 67);
+            this.lblNomAceptarRss.Name = "lblNomAceptarRss";
+            this.lblNomAceptarRss.Size = new System.Drawing.Size(74, 20);
+            this.lblNomAceptarRss.TabIndex = 2;
+            this.lblNomAceptarRss.Text = "Nombre";
+            // 
+            // txtUrlAgregarRssUrl
+            // 
+            this.txtUrlAgregarRssUrl.Location = new System.Drawing.Point(282, 126);
+            this.txtUrlAgregarRssUrl.Name = "txtUrlAgregarRssUrl";
+            this.txtUrlAgregarRssUrl.Size = new System.Drawing.Size(245, 27);
+            this.txtUrlAgregarRssUrl.TabIndex = 1;
+            // 
+            // txtNomAceptarRss
+            // 
+            this.txtNomAceptarRss.Location = new System.Drawing.Point(282, 63);
+            this.txtNomAceptarRss.Name = "txtNomAceptarRss";
+            this.txtNomAceptarRss.Size = new System.Drawing.Size(245, 27);
+            this.txtNomAceptarRss.TabIndex = 0;
+            // 
             // tabModBanner
             // 
             this.tabModBanner.BackColor = System.Drawing.Color.LightSeaGreen;
@@ -426,8 +427,8 @@
             this.tabModBanner.Controls.Add(this.btnModVolverBanner);
             this.tabModBanner.Controls.Add(this.btnModEliminarBanner);
             this.tabModBanner.Controls.Add(this.gBoxModBanner);
-            this.tabModBanner.Controls.Add(this.gBoxModTextoFijo);
             this.tabModBanner.Controls.Add(this.gBoxModRss);
+            this.tabModBanner.Controls.Add(this.gBoxModTextoFijo);
             this.tabModBanner.Location = new System.Drawing.Point(4, 29);
             this.tabModBanner.Name = "tabModBanner";
             this.tabModBanner.Padding = new System.Windows.Forms.Padding(3);
@@ -655,6 +656,74 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Rango entre fechas";
             // 
+            // gBoxModRss
+            // 
+            this.gBoxModRss.BackColor = System.Drawing.Color.Silver;
+            this.gBoxModRss.Controls.Add(this.cBoxModRss);
+            this.gBoxModRss.Controls.Add(this.txtModUrl);
+            this.gBoxModRss.Controls.Add(this.txtNombreModRss);
+            this.gBoxModRss.Controls.Add(this.lblModRss);
+            this.gBoxModRss.Controls.Add(this.lblNombreModRss);
+            this.gBoxModRss.Controls.Add(this.lblBuscarModRss);
+            this.gBoxModRss.Location = new System.Drawing.Point(7, 202);
+            this.gBoxModRss.Name = "gBoxModRss";
+            this.gBoxModRss.Size = new System.Drawing.Size(782, 230);
+            this.gBoxModRss.TabIndex = 28;
+            this.gBoxModRss.TabStop = false;
+            this.gBoxModRss.Text = "Datos Rss";
+            this.gBoxModRss.Visible = false;
+            // 
+            // cBoxModRss
+            // 
+            this.cBoxModRss.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBoxModRss.FormattingEnabled = true;
+            this.cBoxModRss.Location = new System.Drawing.Point(244, 51);
+            this.cBoxModRss.Name = "cBoxModRss";
+            this.cBoxModRss.Size = new System.Drawing.Size(245, 28);
+            this.cBoxModRss.TabIndex = 5;
+            this.cBoxModRss.SelectedIndexChanged += new System.EventHandler(this.cBoxModRss_SelectedIndexChanged);
+            // 
+            // txtModUrl
+            // 
+            this.txtModUrl.Location = new System.Drawing.Point(244, 153);
+            this.txtModUrl.Name = "txtModUrl";
+            this.txtModUrl.Size = new System.Drawing.Size(245, 27);
+            this.txtModUrl.TabIndex = 4;
+            // 
+            // txtNombreModRss
+            // 
+            this.txtNombreModRss.Location = new System.Drawing.Point(244, 101);
+            this.txtNombreModRss.Name = "txtNombreModRss";
+            this.txtNombreModRss.Size = new System.Drawing.Size(245, 27);
+            this.txtNombreModRss.TabIndex = 3;
+            // 
+            // lblModRss
+            // 
+            this.lblModRss.AutoSize = true;
+            this.lblModRss.Location = new System.Drawing.Point(124, 156);
+            this.lblModRss.Name = "lblModRss";
+            this.lblModRss.Size = new System.Drawing.Size(34, 20);
+            this.lblModRss.TabIndex = 2;
+            this.lblModRss.Text = "Url";
+            // 
+            // lblNombreModRss
+            // 
+            this.lblNombreModRss.AutoSize = true;
+            this.lblNombreModRss.Location = new System.Drawing.Point(124, 104);
+            this.lblNombreModRss.Name = "lblNombreModRss";
+            this.lblNombreModRss.Size = new System.Drawing.Size(74, 20);
+            this.lblNombreModRss.TabIndex = 1;
+            this.lblNombreModRss.Text = "Nombre";
+            // 
+            // lblBuscarModRss
+            // 
+            this.lblBuscarModRss.AutoSize = true;
+            this.lblBuscarModRss.Location = new System.Drawing.Point(124, 60);
+            this.lblBuscarModRss.Name = "lblBuscarModRss";
+            this.lblBuscarModRss.Size = new System.Drawing.Size(110, 20);
+            this.lblBuscarModRss.TabIndex = 0;
+            this.lblBuscarModRss.Text = "Rss Activos";
+            // 
             // gBoxModTextoFijo
             // 
             this.gBoxModTextoFijo.BackColor = System.Drawing.Color.Silver;
@@ -725,73 +794,6 @@
             this.lblNomModTexFij.TabIndex = 0;
             this.lblNomModTexFij.Text = "Nombre";
             // 
-            // gBoxModRss
-            // 
-            this.gBoxModRss.Controls.Add(this.cBoxModRss);
-            this.gBoxModRss.Controls.Add(this.txtModUrl);
-            this.gBoxModRss.Controls.Add(this.txtNombreModRss);
-            this.gBoxModRss.Controls.Add(this.lblModRss);
-            this.gBoxModRss.Controls.Add(this.lblNombreModRss);
-            this.gBoxModRss.Controls.Add(this.lblBuscarModRss);
-            this.gBoxModRss.Location = new System.Drawing.Point(6, 202);
-            this.gBoxModRss.Name = "gBoxModRss";
-            this.gBoxModRss.Size = new System.Drawing.Size(775, 213);
-            this.gBoxModRss.TabIndex = 28;
-            this.gBoxModRss.TabStop = false;
-            this.gBoxModRss.Text = "Datos Rss";
-            this.gBoxModRss.Visible = false;
-            // 
-            // cBoxModRss
-            // 
-            this.cBoxModRss.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxModRss.FormattingEnabled = true;
-            this.cBoxModRss.Location = new System.Drawing.Point(244, 51);
-            this.cBoxModRss.Name = "cBoxModRss";
-            this.cBoxModRss.Size = new System.Drawing.Size(245, 28);
-            this.cBoxModRss.TabIndex = 5;
-            this.cBoxModRss.SelectedIndexChanged += new System.EventHandler(this.cBoxModRss_SelectedIndexChanged);
-            // 
-            // txtModUrl
-            // 
-            this.txtModUrl.Location = new System.Drawing.Point(244, 153);
-            this.txtModUrl.Name = "txtModUrl";
-            this.txtModUrl.Size = new System.Drawing.Size(245, 27);
-            this.txtModUrl.TabIndex = 4;
-            // 
-            // txtNombreModRss
-            // 
-            this.txtNombreModRss.Location = new System.Drawing.Point(244, 101);
-            this.txtNombreModRss.Name = "txtNombreModRss";
-            this.txtNombreModRss.Size = new System.Drawing.Size(245, 27);
-            this.txtNombreModRss.TabIndex = 3;
-            // 
-            // lblModRss
-            // 
-            this.lblModRss.AutoSize = true;
-            this.lblModRss.Location = new System.Drawing.Point(124, 156);
-            this.lblModRss.Name = "lblModRss";
-            this.lblModRss.Size = new System.Drawing.Size(34, 20);
-            this.lblModRss.TabIndex = 2;
-            this.lblModRss.Text = "Url";
-            // 
-            // lblNombreModRss
-            // 
-            this.lblNombreModRss.AutoSize = true;
-            this.lblNombreModRss.Location = new System.Drawing.Point(124, 104);
-            this.lblNombreModRss.Name = "lblNombreModRss";
-            this.lblNombreModRss.Size = new System.Drawing.Size(74, 20);
-            this.lblNombreModRss.TabIndex = 1;
-            this.lblNombreModRss.Text = "Nombre";
-            // 
-            // lblBuscarModRss
-            // 
-            this.lblBuscarModRss.AutoSize = true;
-            this.lblBuscarModRss.Location = new System.Drawing.Point(124, 60);
-            this.lblBuscarModRss.Name = "lblBuscarModRss";
-            this.lblBuscarModRss.Size = new System.Drawing.Size(110, 20);
-            this.lblBuscarModRss.TabIndex = 0;
-            this.lblBuscarModRss.Text = "Rss Activos";
-            // 
             // GestionBanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -803,23 +805,23 @@
             this.Load += new System.EventHandler(this.GestionBanner_Load);
             this.tabCtrlBanner.ResumeLayout(false);
             this.tabAgregarBanner.ResumeLayout(false);
-            this.gBoxRss.ResumeLayout(false);
-            this.gBoxRss.PerformLayout();
             this.gBoxAgregarBanner.ResumeLayout(false);
             this.gBoxAgregarBanner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraAgregarBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraAgregarBan)).EndInit();
             this.gBoxTextoFijo.ResumeLayout(false);
             this.gBoxTextoFijo.PerformLayout();
+            this.gBoxRss.ResumeLayout(false);
+            this.gBoxRss.PerformLayout();
             this.tabModBanner.ResumeLayout(false);
             this.gBoxModBanner.ResumeLayout(false);
             this.gBoxModBanner.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraModBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraModBan)).EndInit();
-            this.gBoxModTextoFijo.ResumeLayout(false);
-            this.gBoxModTextoFijo.PerformLayout();
             this.gBoxModRss.ResumeLayout(false);
             this.gBoxModRss.PerformLayout();
+            this.gBoxModTextoFijo.ResumeLayout(false);
+            this.gBoxModTextoFijo.PerformLayout();
             this.ResumeLayout(false);
 
         }
