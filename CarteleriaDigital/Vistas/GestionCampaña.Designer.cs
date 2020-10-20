@@ -994,7 +994,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 757);
             this.Controls.Add(this.tabCampaña);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionCampaña";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gestion Campaña";
             this.Load += new System.EventHandler(this.GestionCampaña_Load);
             this.tabCampaña.ResumeLayout(false);
             this.tbCtrlAgregar.ResumeLayout(false);

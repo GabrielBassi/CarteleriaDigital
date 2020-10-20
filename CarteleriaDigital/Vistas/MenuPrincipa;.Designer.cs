@@ -96,10 +96,6 @@
             this.lblCargaBarra.TabIndex = 5;
             this.lblCargaBarra.Text = "Cargando...";
             // 
-            // timerCarga
-            // 
-            this.timerCarga.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -111,7 +107,10 @@
             this.Controls.Add(this.btnIniciar);
             this.Controls.Add(this.btnBanner);
             this.Controls.Add(this.btnCampaña);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu Principal";
             this.ResumeLayout(false);
             this.PerformLayout();

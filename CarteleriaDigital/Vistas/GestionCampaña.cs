@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using CarteleriaDigital.Excepciones;
 using CarteleriaDigital.Controladores;
@@ -82,8 +81,7 @@ namespace CarteleriaDigital.Vistas
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(ex.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

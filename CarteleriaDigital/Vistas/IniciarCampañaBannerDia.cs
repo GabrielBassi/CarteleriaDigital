@@ -65,8 +65,6 @@ namespace CarteleriaDigital.Vistas
                 }
               
             }
-            ////listaTiempo.Clear();
-            ////listaPath.Clear();
         }
 
         private void timerBanner_Tick(object sender, EventArgs e)
@@ -109,10 +107,7 @@ namespace CarteleriaDigital.Vistas
         {
             timerBanner.Start();
             timerCampañas.Start();
-            timerControl.Start();
-            
-            //listaBanner = iControladorBanner.BuscarBannerActivosHoy();
-           // listaCampaña = iControladorCampaña.BuscarCampañaActivosHoy();
+            timerControl.Start();           
         }
 
         private void timerControl_Tick(object sender, EventArgs e)
@@ -131,5 +126,6 @@ namespace CarteleriaDigital.Vistas
                 pBoxCampañas.Image = Image.FromFile(ruta+"\\publicite.jpg");
             }
         }
+
     }
 }

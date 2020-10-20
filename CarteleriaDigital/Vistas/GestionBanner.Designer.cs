@@ -798,10 +798,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 546);
+            this.ClientSize = new System.Drawing.Size(807, 550);
             this.Controls.Add(this.tabCtrlBanner);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GestionBanner";
-            this.Text = "GestionBanner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gestion Banner";
             this.Load += new System.EventHandler(this.GestionBanner_Load);
             this.tabCtrlBanner.ResumeLayout(false);
             this.tabAgregarBanner.ResumeLayout(false);

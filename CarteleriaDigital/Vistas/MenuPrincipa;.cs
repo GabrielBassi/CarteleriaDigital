@@ -18,12 +18,6 @@ namespace CarteleriaDigital
             InitializeComponent();
         }
 
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-            
-
-        }
-
         private void btnCampaña_Click(object sender, EventArgs e)
         {
             GestionCampaña mGestionCampaña = new GestionCampaña();
@@ -42,15 +36,13 @@ namespace CarteleriaDigital
             this.timerCarga.Start();
             this.pBarCarga.Increment(40);
             lblCargaBarra.Text = pBarCarga.Value.ToString() + "%";
-            this.pBarCarga.Increment(60);
+            this.pBarCarga.Increment(100);
             if (pBarCarga.Value == pBarCarga.Maximum)
             {
-
                 timerCarga.Stop();
-             //   this.Hide();
-
+                this.Hide();
             }
-            this.pBarCarga.Increment(80);
+
             IniciarCampañaBannerDia mIniciarCampañaBannerDia = new IniciarCampañaBannerDia();
             mIniciarCampañaBannerDia.Show();
         }
@@ -70,7 +62,7 @@ namespace CarteleriaDigital
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //barraDeCarga();
+
         }
 
         private void pBarCarga_Click(object sender, EventArgs e)

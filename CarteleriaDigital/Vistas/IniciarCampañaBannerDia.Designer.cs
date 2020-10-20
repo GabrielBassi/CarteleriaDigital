@@ -43,28 +43,28 @@
             // 
             this.gBoxTextoDeslizable.BackColor = System.Drawing.Color.Silver;
             this.gBoxTextoDeslizable.Controls.Add(this.lblBannerDeslizable);
-            this.gBoxTextoDeslizable.Location = new System.Drawing.Point(12, 390);
+            this.gBoxTextoDeslizable.Location = new System.Drawing.Point(12, 819);
             this.gBoxTextoDeslizable.Name = "gBoxTextoDeslizable";
-            this.gBoxTextoDeslizable.Size = new System.Drawing.Size(906, 98);
+            this.gBoxTextoDeslizable.Size = new System.Drawing.Size(2016, 205);
             this.gBoxTextoDeslizable.TabIndex = 1;
             this.gBoxTextoDeslizable.TabStop = false;
             // 
             // lblBannerDeslizable
             // 
             this.lblBannerDeslizable.AutoSize = true;
-            this.lblBannerDeslizable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBannerDeslizable.Location = new System.Drawing.Point(402, 38);
+            this.lblBannerDeslizable.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.lblBannerDeslizable.Location = new System.Drawing.Point(523, 42);
             this.lblBannerDeslizable.Name = "lblBannerDeslizable";
-            this.lblBannerDeslizable.Size = new System.Drawing.Size(146, 29);
+            this.lblBannerDeslizable.Size = new System.Drawing.Size(722, 135);
             this.lblBannerDeslizable.TabIndex = 0;
-            this.lblBannerDeslizable.Text = "Su banner..";
+            this.lblBannerDeslizable.Text = "Su banner...";
             // 
             // pBoxCampañas
             // 
             this.pBoxCampañas.BackColor = System.Drawing.Color.Silver;
-            this.pBoxCampañas.Location = new System.Drawing.Point(12, 12);
+            this.pBoxCampañas.Location = new System.Drawing.Point(12, 16);
             this.pBoxCampañas.Name = "pBoxCampañas";
-            this.pBoxCampañas.Size = new System.Drawing.Size(906, 372);
+            this.pBoxCampañas.Size = new System.Drawing.Size(2016, 787);
             this.pBoxCampañas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxCampañas.TabIndex = 2;
             this.pBoxCampañas.TabStop = false;
@@ -86,11 +86,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(930, 500);
+            this.ClientSize = new System.Drawing.Size(2041, 1055);
             this.Controls.Add(this.pBoxCampañas);
             this.Controls.Add(this.gBoxTextoDeslizable);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "IniciarCampañaBannerDia";
-            this.Text = "IniciarCampañaBannerDia";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.IniciarCampañaBannerDia_Load);
             this.gBoxTextoDeslizable.ResumeLayout(false);
             this.gBoxTextoDeslizable.PerformLayout();
