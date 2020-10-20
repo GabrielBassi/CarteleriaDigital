@@ -8,9 +8,9 @@ using CarteleriaDigital.Modelo;
 
 namespace CarteleriaDigital.DAL
 {
-    interface IRepositorioRssUrl : IRepositorioGeneral<RssUrl>
+    interface IRepositorioFuenteRss : IRepositorioGeneral<FuenteRss>
     {
-        RssUrl ExistenciaRssUrl(string pNombre);
+        FuenteRss ExistenciaRssUrl(string pNombre);
         bool ExisteRssUrlPorNombre(string pNombreRss);
     }
 }

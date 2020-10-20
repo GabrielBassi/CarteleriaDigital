@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace CarteleriaDigital.Controladores
 {
-    class ControladorRssUrl
+    class ControladorFuenteRss
     {
         private readonly IUnidadDeTrabajo iUdT;
 
-        public ControladorRssUrl(IUnidadDeTrabajo pUnidadDeTrabajo)
+        public ControladorFuenteRss(IUnidadDeTrabajo pUnidadDeTrabajo)
         {
             this.iUdT = pUnidadDeTrabajo;
         }
@@ -22,7 +22,7 @@ namespace CarteleriaDigital.Controladores
         public void AgregarRssUrl(string pNombre, string pUrl)
         {
 
-            RssUrl iRssUrl = new RssUrl()
+            FuenteRss iRssUrl = new FuenteRss()
             {
                 Nombre = pNombre,
                 Url = Convert.ToString(pUrl),
@@ -30,24 +30,24 @@ namespace CarteleriaDigital.Controladores
             this.iUdT.RepositorioRssUrl.Agregar(iRssUrl);
             iUdT.Guardar();
         }
-        public RssUrl Obtener(int RssUrlId)
+        public FuenteRss Obtener(int RssUrlId)
         {
             return this.iUdT.RepositorioRssUrl.Obtener(RssUrlId);
         }
 
         public int UltimoIdRSS()
         {
-            IEnumerable<RssUrl> lista;
+            IEnumerable<FuenteRss> lista;
             lista = iUdT.RepositorioRssUrl.ObtenerTodos();
-            return lista.Last().RssUrlId;
+            return lista.Last().FuenteRssId;
         }
-        public RssUrl BuscarRssPorNombre(string pCadena)
+        public FuenteRss BuscarRssPorNombre(string pCadena)
         {
-            RssUrl iRssUrl = iUdT.RepositorioRssUrl.ExistenciaRssUrl(pCadena);
+            FuenteRss iRssUrl = iUdT.RepositorioRssUrl.ExistenciaRssUrl(pCadena);
             return iRssUrl;
         }
 
-        public void CargarRssUrlModificar(RssUrl mRssUrl, TextBox txtNombreModRss, TextBox txtModUrl)
+        public void CargarRssUrlModificar(FuenteRss mRssUrl, TextBox txtNombreModRss, TextBox txtModUrl)
         {
             txtNombreModRss.Text = mRssUrl.Nombre;
             txtModUrl.Text = mRssUrl.Url;
@@ -55,8 +55,8 @@ namespace CarteleriaDigital.Controladores
 
         public void CargarRssActivos(ComboBox pComboRss)
         {
-            IEnumerable<RssUrl> listaRss = iUdT.RepositorioRssUrl.ObtenerTodos();
-            foreach (RssUrl item in listaRss)
+            IEnumerable<FuenteRss> listaRss = iUdT.RepositorioRssUrl.ObtenerTodos();
+            foreach (FuenteRss item in listaRss)
             {
                 pComboRss.Items.Add(item.Nombre);
             }

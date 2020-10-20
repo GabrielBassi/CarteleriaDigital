@@ -8,15 +8,15 @@ using System.Xml.Linq;
 
 namespace CarteleriaDigital.Modelo
 {
-    public class RssUrl : IEstrategiaTipoDatosFuente
+    public class FuenteRss : IEstrategiaTipoDatosFuente
     {
-        public int RssUrlId { get; set; }
+        public int FuenteRssId { get; set; }
         public string Nombre { get; set; }
         public string Url { get; set; }
 
         public XDocument LeerInformacion(string purl)
         {
-            RssUrl mLectorRSS = new RssUrl();
+            FuenteRss mLectorRSS = new FuenteRss();
             return mLectorRSS.ObteneDocumentoXML(purl);
         }
 
@@ -68,11 +68,7 @@ namespace CarteleriaDigital.Modelo
                 return this.ObtenerUltimoRSSLeido();
 
             }
-            catch (Exception)
-            {
 
-                throw;
-            }
 
         }
         private XDocument ObtenerUltimoRSSLeido()

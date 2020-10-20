@@ -59,7 +59,7 @@
     <Compile Include="Controladores\ControladorBanner.cs" />
     <Compile Include="Controladores\ControladorCampaña.cs" />
     <Compile Include="Controladores\ControladorImagen.cs" />
-    <Compile Include="Controladores\ControladorRssUrl.cs" />
+    <Compile Include="Controladores\ControladorFuenteRss.cs" />
     <Compile Include="Controladores\ControladorTextoFijo.cs" />
     <Compile Include="Controless\Controles.cs" />
     <Compile Include="DAL\EntityFramework\CarteleriaDigitalContext.cs" />
@@ -69,26 +69,22 @@
     <Compile Include="DAL\EntityFramework\RepositorioEstrategiaTipoDatosFuente.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioGeneral.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioImagen.cs" />
-    <Compile Include="DAL\EntityFramework\RepositorioRssUrl.cs" />
+    <Compile Include="DAL\EntityFramework\RepositorioFuenteRss.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioTextoFijo.cs" />
     <Compile Include="DAL\EntityFramework\UnidadDeTrabajo.cs" />
     <Compile Include="DAL\IRepositorioBanner.cs" />
     <Compile Include="DAL\IRepositorioCampaña.cs" />
     <Compile Include="DAL\IRepositorioGeneral.cs" />
     <Compile Include="DAL\IRepositorioImagen.cs" />
-    <Compile Include="DAL\IRepositorioRssUrl.cs" />
+    <Compile Include="DAL\IRepositorioFuenteRss.cs" />
     <Compile Include="DAL\IRepositorioTextoFijo.cs" />
     <Compile Include="DAL\IUnidadDeTrabajo.cs" />
     <Compile Include="Excepciones\ExcepcionControlFechas.cs" />
     <Compile Include="Excepciones\ExisteNombre.cs" />
     <Compile Include="Excepciones\FaltanDatosObligatorios.cs" />
-    <Compile Include="Migrations\202010130114038_v1.0.cs" />
-    <Compile Include="Migrations\202010130114038_v1.0.designer.cs">
-      <DependentUpon>202010130114038_v1.0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010171850037_fredyMigration.cs" />
-    <Compile Include="Migrations\202010171850037_fredyMigration.designer.cs">
-      <DependentUpon>202010171850037_fredyMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202010201840116_1.0.cs" />
+    <Compile Include="Migrations\202010201840116_1.0.designer.cs">
+      <DependentUpon>202010201840116_1.0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\EstrategiaTipoDatosFuente.cs" />
@@ -120,15 +116,12 @@
     <Compile Include="Modelo\Banner.cs" />
     <Compile Include="Modelo\Campaña.cs" />
     <Compile Include="Modelo\Imagen.cs" />
-    <Compile Include="Modelo\RssUrl.cs" />
+    <Compile Include="Modelo\FuenteRss.cs" />
     <Compile Include="Modelo\TextoFijo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202010130114038_v1.0.resx">
-      <DependentUpon>202010130114038_v1.0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010171850037_fredyMigration.resx">
-      <DependentUpon>202010171850037_fredyMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010201840116_1.0.resx">
+      <DependentUpon>202010201840116_1.0.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

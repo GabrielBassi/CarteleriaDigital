@@ -12,10 +12,10 @@ namespace CarteleriaDigital.Vistas
     {
         ControladorBanner iControladorBanner;
         ControladorTextoFijo iControladorTextoFijo;
-        ControladorRssUrl iControladorRssUrl;
+        ControladorFuenteRss iControladorRssUrl;
         Controles iControl;
         Banner mBannerMod;
-        RssUrl mRssUrl;
+        FuenteRss mRssUrl;
         TextoFijo mTextoFijo;
         int pDatosEstrategia = 0;
         int idDatosTipoFuente = 0;
@@ -24,7 +24,7 @@ namespace CarteleriaDigital.Vistas
             InitializeComponent();
             iControladorBanner = new ControladorBanner(UnidadDeTrabajo.Instancia);
             iControladorTextoFijo = new ControladorTextoFijo(UnidadDeTrabajo.Instancia);
-            iControladorRssUrl = new ControladorRssUrl(UnidadDeTrabajo.Instancia);
+            iControladorRssUrl = new ControladorFuenteRss(UnidadDeTrabajo.Instancia);
             iControl = new Controles();
         }
 
@@ -351,7 +351,7 @@ namespace CarteleriaDigital.Vistas
             try
             {   
                 mRssUrl = iControladorRssUrl.BuscarRssPorNombre(cBoxModRss.Text);
-                idDatosTipoFuente= iControladorRssUrl.BuscarRssPorNombre(cBoxModRss.Text).RssUrlId;
+                idDatosTipoFuente= iControladorRssUrl.BuscarRssPorNombre(cBoxModRss.Text).FuenteRssId;
                 iControladorRssUrl.CargarRssUrlModificar(mRssUrl, txtNombreModRss, txtModUrl);
             }
             catch (Exception)
@@ -360,10 +360,6 @@ namespace CarteleriaDigital.Vistas
             }
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void CmbModTextoFijo_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -15,7 +15,7 @@ namespace CarteleriaDigital.Vistas
         ControladorCampaña iControladorCampaña;
         ControladorTextoFijo iControladorTextoFijo;
         ControladorImagen iControladorImagen;
-        ControladorRssUrl iControladorRSS;
+        ControladorFuenteRss iControladorRSS;
         IList<Banner> listaBanner;
         IList<Campaña> listaCampaña;
         IList<string> listaPath = new List<string>();
@@ -29,7 +29,7 @@ namespace CarteleriaDigital.Vistas
             iControladorCampaña = new ControladorCampaña(UnidadDeTrabajo.Instancia);
             iControladorTextoFijo = new ControladorTextoFijo(UnidadDeTrabajo.Instancia);
             iControladorImagen= new ControladorImagen(UnidadDeTrabajo.Instancia,1,1);
-            iControladorRSS = new ControladorRssUrl(UnidadDeTrabajo.Instancia);
+            iControladorRSS = new ControladorFuenteRss(UnidadDeTrabajo.Instancia);
         }
 
         private void timerCampañas_Tick(object sender, EventArgs e)

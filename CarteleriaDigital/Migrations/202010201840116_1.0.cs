@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class v10 : DbMigration
+    public partial class _10 : DbMigration
     {
         public override void Up()
         {
@@ -61,14 +61,14 @@
                 .Index(t => t.Campaña_CampañaId);
             
             CreateTable(
-                "dbo.RssUrls",
+                "dbo.FuenteRsses",
                 c => new
                     {
-                        RssUrlId = c.Int(nullable: false, identity: true),
+                        FuenteRssId = c.Int(nullable: false, identity: true),
                         Nombre = c.String(),
                         Url = c.String(),
                     })
-                .PrimaryKey(t => t.RssUrlId);
+                .PrimaryKey(t => t.FuenteRssId);
             
             CreateTable(
                 "dbo.TextoFijoes",
@@ -89,7 +89,7 @@
             DropIndex("dbo.Imagens", new[] { "Campaña_CampañaId" });
             DropIndex("dbo.Banners", new[] { "EstrategiaTipoDatosFuente_EstrategiaTipoDatosFuenteId" });
             DropTable("dbo.TextoFijoes");
-            DropTable("dbo.RssUrls");
+            DropTable("dbo.FuenteRsses");
             DropTable("dbo.Imagens");
             DropTable("dbo.Campaña");
             DropTable("dbo.EstrategiaTipoDatosFuentes");

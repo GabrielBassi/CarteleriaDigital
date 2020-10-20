@@ -12,7 +12,7 @@ namespace CarteleriaDigital.DAL
         IRepositorioCampaña RepositorioCampaña { get; }
         IRepositorioImagen RepositorioImagen { get; }
         IRepositorioBanner RepositorioBanner { get; }
-        IRepositorioRssUrl RepositorioRssUrl { get; }
+        IRepositorioFuenteRss RepositorioRssUrl { get; }
         IRepositorioTextoFijo RepositorioTextoFijo { get; }
         IRepositorioEstrategiaTipoDatosFuente RepositorioEstrategiaTipoDatos { get; }
 

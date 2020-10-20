@@ -20,7 +20,6 @@ C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFrame
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFramework.xml
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.v10.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Properties.Resources.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionBanner.resources
 C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Vistas.GestionCampaña.resources
@@ -52,4 +51,4 @@ F:\MisRepositorios\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigit
 F:\MisRepositorios\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.pdb
 F:\MisRepositorios\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.fredyMigration.resources
 F:\MisRepositorios\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.csprojAssemblyReference.cache
-C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations.fredyMigration.resources
+C:\Users\Harry\Desktop\CarteleriaDigital\CarteleriaDigital\obj\Debug\CarteleriaDigital.Migrations._10.resources

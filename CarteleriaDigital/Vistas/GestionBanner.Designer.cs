@@ -749,7 +749,6 @@
             this.label8.Size = new System.Drawing.Size(160, 20);
             this.label8.TabIndex = 38;
             this.label8.Text = "Texto Fijo Activos";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // CmbModTextoFijo
             // 

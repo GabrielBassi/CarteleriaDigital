@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Xml.Linq;
 
 namespace CarteleriaDigital.Modelo
@@ -35,12 +31,6 @@ namespace CarteleriaDigital.Modelo
         {
             return this.EstrategiaTipoDatosFuentes.LeerInformacion(pcadena);
         }
-
-        //public enum TipoDeEstrategia
-        //{
-        //    EstrategiaTextoFijo = 1,
-        //    EstrategiaRss = 2
-        //}
     }
 }
 

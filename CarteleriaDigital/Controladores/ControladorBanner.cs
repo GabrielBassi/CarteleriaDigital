@@ -11,13 +11,13 @@ namespace CarteleriaDigital.Controladores
     {
         private readonly IUnidadDeTrabajo iUdT;
         ControladorTextoFijo iControladorTextoFijo;
-        ControladorRssUrl iControladorRssUrl;
+        ControladorFuenteRss iControladorRssUrl;
 
         public ControladorBanner(IUnidadDeTrabajo pUnidadDeTrabajo)
         {
             this.iUdT = pUnidadDeTrabajo;
             iControladorTextoFijo = new ControladorTextoFijo(iUdT);
-            iControladorRssUrl = new ControladorRssUrl(iUdT);
+            iControladorRssUrl = new ControladorFuenteRss(iUdT);
         }
 
         /// <summary>
@@ -127,12 +127,13 @@ namespace CarteleriaDigital.Controladores
             else if (mBannerMod.EstrategiaTipoDatosFuente.NombreTipoDeEstrategia == "RSS")
             {
                 int idtF = Convert.ToInt32(mBannerMod.EstrategiaTipoDatosFuente.DatosEstrategiaId);
-                RssUrl mRssUrl = iControladorRssUrl.Obtener(idtF);
+                FuenteRss mRssUrl = iControladorRssUrl.Obtener(idtF);
                 txtNombreModRss.Text = mRssUrl.Nombre;
                 txtModUrl.Text = mRssUrl.Url;
             }
         }
 
+        //Revisar esto
         internal bool ConsultarExistenciaNombreBanner(string pNombreBanner)
         {
             bool existencia = false;
