@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CarteleriaDigital.Modelo;
 
 namespace CarteleriaDigital.DAL.EntityFramework
@@ -12,6 +9,18 @@ namespace CarteleriaDigital.DAL.EntityFramework
         public RepositorioImagen(CarteleriaDigitalContext pContext) : base(pContext)
         {
         }
+
+        public void EliminarPorNombre(string pNombre) 
+        {
+            var mImagen = this.iDbContext.Imagenes.Where(x => x.Nombre == pNombre);
+
+            if (mImagen!=null)
+            {
+                this.Eliminar(mImagen.First());
+            }
+            
+        }
+
         public IList<Imagen> ObtenerTodasLasImagensDeLaCampaña(int pidCampaña)
         {
             var m = from imagen in iDbContext.Imagenes

@@ -11,7 +11,7 @@ using CarteleriaDigital.Controladores;
 using CarteleriaDigital.DAL.EntityFramework;
 using CarteleriaDigital.Excepciones;
 using CarteleriaDigital.Modelo;
-using CarteleriaDigital.Control;
+using CarteleriaDigital.Controless;
 
 namespace CarteleriaDigital.Vistas
 {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CarteleriaDigital.Excepciones;
 
 
-namespace CarteleriaDigital.Control
+namespace CarteleriaDigital.Controless
 {
     class Controles
     {

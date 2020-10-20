@@ -10,6 +10,8 @@ namespace CarteleriaDigital.DAL
     interface IRepositorioImagen : IRepositorioGeneral<Imagen>
     {
         IList<Imagen> ObtenerTodasLasImagensDeLaCampaña(int pidCampaña);
+        void EliminarPorNombre(string pNombre);
+
        
 
     }

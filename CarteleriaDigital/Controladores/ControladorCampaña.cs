@@ -20,7 +20,7 @@ namespace CarteleriaDigital.Controladores
         public ControladorCampaña(UnidadDeTrabajo pUnidadDeTrabajo)
         {
             this.iUdT = pUnidadDeTrabajo;
-            iControladorImagen = new ControladorImagen(iUdT, aa, jj);
+            iControladorImagen = new ControladorImagen(iUdT,1,1);
 
         }
         /// <summary>
@@ -53,6 +53,12 @@ namespace CarteleriaDigital.Controladores
             iUdT.Guardar();
         }
 
+        public void AgregarCampaña(Campaña pCampaña)
+        {
+            this.iUdT.RepositorioCampaña.Modificar(pCampaña);
+            iUdT.Guardar();
+        }
+
         /// <summary>
         /// Modifica una campaña en el repositorio
         /// </summary>
@@ -64,7 +70,7 @@ namespace CarteleriaDigital.Controladores
         /// <param name="pHoraFin"></param>
         /// <param name="pDuracion"></param>
         /// <param name="pListaImagen"></param>
-        
+
         public void ModificarCampaña(Campaña pCampaña, string pNombre, DateTime pFechaInicio, DateTime pFechaFin, TimeSpan pHoraInicio, TimeSpan pHoraFin, int pDuracionImagen, IList<Imagen> pListaImagen)
         {
             pCampaña.Nombre = pNombre;
@@ -150,14 +156,14 @@ namespace CarteleriaDigital.Controladores
         public void CargarCampañaModificar(Campaña mCampañaMod, TextBox txtNomCampañaMod, NumericUpDown nUDuracionMod, DateTimePicker dTPickFechaDesdeMod, DateTimePicker dTPickFechaHastaMod, NumericUpDown nUpDesdeHoraMod, NumericUpDown nUpHastaHoraMod, GroupBox gBoxCampañaMod)
         {
 
-            txtNomCampañaMod.Text = mCampañaMod.Nombre;
-            nUDuracionMod.Value = mCampañaMod.DuracionImagen;
-            dTPickFechaDesdeMod.Value = mCampañaMod.FechaInicio;
-            dTPickFechaHastaMod.Value = mCampañaMod.FechaFin;
-            nUpDesdeHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraInicio.Hours);
-            nUpHastaHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraFin.Hours);
+            //txtNomCampañaMod.Text = mCampañaMod.Nombre;
+            //nUDuracionMod.Value = mCampañaMod.DuracionImagen;
+            //dTPickFechaDesdeMod.Value = mCampañaMod.FechaInicio;
+            //dTPickFechaHastaMod.Value = mCampañaMod.FechaFin;
+            //nUpDesdeHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraInicio.Hours);
+            //nUpHastaHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraFin.Hours);
 
-            iControladorImagen.CargoPictureBoxModificar(iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId), gBoxCampañaMod, 20, 35);
+            //iControladorImagen.CargoPictureBoxModificar(iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId), gBoxCampañaMod, 20, 35);
         }
 
         public IList<Campaña> BuscarCampañaActivosHoy()

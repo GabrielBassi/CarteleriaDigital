@@ -6,8 +6,9 @@ using CarteleriaDigital.Excepciones;
 using CarteleriaDigital.Controladores;
 using CarteleriaDigital.DAL.EntityFramework;
 using CarteleriaDigital.Modelo;
-using CarteleriaDigital.Control;
-
+using CarteleriaDigital.Controless;
+using System.Drawing;
+using System.IO;
 
 namespace CarteleriaDigital.Vistas
 {
@@ -18,18 +19,13 @@ namespace CarteleriaDigital.Vistas
         Campaña mCampañaMod;
         Controles iControl;
         IList<Imagen> listaImagenes = new List<Imagen>();
-       // IList<Imagen> listaImagenesMod = new List<Imagen>();
-        IList<int> listaImagenesMod = new List<int>();
-        int aa = 20;
-        int jj = 35;
-        int contador = 0;
         bool control = false;
 
         public GestionCampaña()
         {
             InitializeComponent();
             iControladorCampaña = new ControladorCampaña(UnidadDeTrabajo.Instancia);
-            iControladorImagen = new ControladorImagen(UnidadDeTrabajo.Instancia, aa, jj);
+            iControladorImagen = new ControladorImagen(UnidadDeTrabajo.Instancia,1,1);
             iControl = new Controles();
 
         }
@@ -67,12 +63,8 @@ namespace CarteleriaDigital.Vistas
                 {
                     throw new FaltanDatosObligatorios("Faltar Cargar Imágenes a la Campaña");
                 }
-
-                //Revisar estos parámetros
                 iControladorCampaña.AgregarCampaña(txBoxNombreAgregarCamp.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionAgregar.Text), listaImagenes);
                 MessageBox.Show("La campaña se registro con exito", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                contador = 0; ///
-                listaImagenes = new List<Imagen>();
                 LimpiarPantallaAlta();
 
             }
@@ -90,7 +82,8 @@ namespace CarteleriaDigital.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(ex.ToString(), "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -102,14 +95,52 @@ namespace CarteleriaDigital.Vistas
         {
             try
             {
-                iControladorImagen.CargarImagenes(listaImagenes, gBoxImagenes, contador, listaImagenesMod);
-                contador += 1;
+                OpenFileDialog CargarImagen = new OpenFileDialog();
+                CargarImagen.Filter = "Imágenes(*.jpg, *.gif, *.bmp)|*.jpg;*.gif;*.png";
+
+                if (CargarImagen.ShowDialog() == DialogResult.OK)
+                {
+                    this.CargarImagenEnUnPictureBox(CargarImagen,this.gBoxImagenes);                  
+                    
+                }
+
             }
-            catch (Exception)
+            catch (Exception ee)
             {
+                MessageBox.Show(ee.Message);
                 MessageBox.Show("Ocurrió un error al cargar la imagen", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void CargarImagenEnUnPictureBox(OpenFileDialog CargarImagen, GroupBox pBoxImagenes)
+        {
+            bool mCompleto = true;
+            foreach (Control unPictureBox in pBoxImagenes.Controls)
+            {
+                if (unPictureBox.GetType()==typeof(PictureBox) && ((PictureBox)unPictureBox).Image == null)
+                {
+                    mCompleto = false;
+                    ((PictureBox)unPictureBox).Image = Image.FromFile(CargarImagen.FileName);
+                    ((PictureBox)unPictureBox).SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    ((PictureBox)unPictureBox).Tag = CargarImagen.FileName;
+
+                    Imagen mImagen = new Imagen()
+                    {
+                        Nombre = Path.GetFileName(((PictureBox)unPictureBox).Tag.ToString()),
+                        RutaImagen = CargarImagen.FileName,
+                    };
+                    this.listaImagenes.Add(mImagen);
+
+                    break;
+                }
+            }
+
+            if (mCompleto)
+            {
+                MessageBox.Show("Llegaste al máximo de Imágenes", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }           
         }
 
         private void BtnVolverCampaña_Click(object sender, EventArgs e)
@@ -126,9 +157,17 @@ namespace CarteleriaDigital.Vistas
         {
             try
             {
-                gBoxImagenMod.Controls.Clear();
+                this.QuitarLasImagenesEnPictureBox(this.gBoxImagenMod);
                 mCampañaMod = iControladorCampaña.BuscarCampañaPorNombre(cBoxModCampActivas.Text);
-                iControladorCampaña.CargarCampañaModificar(mCampañaMod, txtNomCampañaMod, nUDuracionMod, dTPickFechaDesdeMod, dTPickFechaHastaMod, nUpDesdeHoraMod, nUpHastaHoraMod, gBoxImagenMod);
+
+                this.txtNomCampañaMod.Text = mCampañaMod.Nombre;
+                this.nUDuracionMod.Value = mCampañaMod.DuracionImagen;
+                this.dTPickFechaDesdeMod.Value = mCampañaMod.FechaInicio;
+                this.dTPickFechaHastaMod.Value = mCampañaMod.FechaFin;
+                this.nUpDesdeHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraInicio.Hours);
+                this.nUpHastaHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraFin.Hours);
+                this.listaImagenes = this.ClonarLista(mCampañaMod.ListaImagenes);
+                this.CargarImagenEnLosPictureBox(this.listaImagenes);
             }
             catch (Exception)
             {
@@ -136,10 +175,56 @@ namespace CarteleriaDigital.Vistas
             }
         }
 
+        private void CargarImagenEnLosPictureBox(IList<Imagen> pListaImagenes)
+        {
+            this.QuitarLasImagenesEnPictureBox(this.gBoxCampañaMod);
+            foreach (Imagen unaImagen in pListaImagenes)
+            {
+                foreach (Control unPicturBox in this.gBoxImagenMod.Controls)
+                {
+                    if ((unPicturBox.GetType() == typeof(PictureBox)) && ((PictureBox)unPicturBox).Image == null)
+                    {
+                        ((PictureBox)unPicturBox).Image = Image.FromFile(unaImagen.RutaImagen);
+                        ((PictureBox)unPicturBox).SizeMode = PictureBoxSizeMode.StretchImage;
+                        ((PictureBox)unPicturBox).Tag = unaImagen.RutaImagen;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private IList<Imagen> ClonarLista(IList<Imagen> pListaImagenes)
+        {
+            IList<Imagen> mLista = new List<Imagen>();
+            foreach (Imagen unImagen in pListaImagenes)
+            {
+                mLista.Add(unImagen);
+            }
+
+            return mLista;
+        }
+
+        private void QuitarLasImagenesEnPictureBox(GroupBox pGBoxConImagenes)
+        {
+            foreach (Control unPictureBox in pGBoxConImagenes.Controls)
+            {
+                if (unPictureBox.GetType()==typeof(PictureBox))
+                {
+                    ((PictureBox)unPictureBox).Image = null;
+                }                
+            }
+            this.Refresh();
+        }
+
         private void CargarImagMod_Click(object sender, EventArgs e)
         {
-            control = iControladorImagen.CargarImagenesMod(mCampañaMod.ListaImagenes, listaImagenesMod, gBoxImagenMod, contador);
-            contador++;
+            OpenFileDialog CargarImagen = new OpenFileDialog();
+            CargarImagen.Filter = "";
+            if (CargarImagen.ShowDialog()==DialogResult.OK)
+            {
+                this.CargarImagenEnUnPictureBox(CargarImagen, this.gBoxImagenMod);
+            }
+
         }
         private void GestionCampaña_Load(object sender, EventArgs e)
         {
@@ -170,20 +255,8 @@ namespace CarteleriaDigital.Vistas
             dTPickFechaHasta.Value = DateTime.Now;
             nUpDesdeHoraAgregar.Value = 0;
             nUpHastaHoraAgregar.Value = 0;
-            gBoxImagenes.Controls.Clear();
-            listaImagenes.Clear();
-            listaImagenes = new List<Imagen>();
-            contador = 0;
-            aa = 20;
-            jj = 35;
-            int s = listaImagenesMod.ElementAt(0);
-            int ss = mCampañaMod.ListaImagenes.Count;
-            for (int i = s; i < ss; i++)
-            {
-                mCampañaMod.ListaImagenes.RemoveAt(s);
-            }
-            listaImagenesMod.Clear();
-           
+            this.QuitarLasImagenesEnPictureBox(this.gBoxImagenes);
+            this.listaImagenes = new List<Imagen>(); 
         }
         private void LimpiarPantallaMod()
         {
@@ -197,10 +270,7 @@ namespace CarteleriaDigital.Vistas
             dTPickFechaHastaMod.Value = DateTime.Now;
             nUpDesdeHoraMod.Value = 0;
             nUpHastaHoraMod.Value = 0;
-            gBoxImagenMod.Controls.Clear();
-            aa = 20;
-            jj = 35;
-            contador = 0;
+            this.QuitarLasImagenesEnPictureBox(this.gBoxImagenMod);
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -221,9 +291,9 @@ namespace CarteleriaDigital.Vistas
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
                 iControl.ValidarRangoHora(pHoraInicio, pHoraFin);
-                if (control == true)
+                if (control == false)
                 {
-                    iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), mCampañaMod.ListaImagenes);
+                    iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text),this.listaImagenes);
                 }
                 else
                 {
@@ -261,6 +331,90 @@ namespace CarteleriaDigital.Vistas
             {
                 MessageBox.Show(msg.Message, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ElimarImagen(PictureBox pPictureBox)
+        {
+            pPictureBox.Image = null;
+
+            string mNombre = Path.GetFileName(pPictureBox.Tag.ToString());
+            var mlistaANTES = mCampañaMod.ListaImagenes;
+            this.iControladorImagen.EliminarImagenPorNombre(mNombre);
+            var lista = this.iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId);
+            var mListaDESPUES = listaImagenes;
+            this.cargarComboBORRAR(lista);
+        }
+
+        private void cargarComboBORRAR(IList<Imagen> lista)
+        {
+            this.QuitarLasImagenesEnPictureBox(this.gBoxImagenMod);
+            mCampañaMod = iControladorCampaña.BuscarCampañaPorNombre(cBoxModCampActivas.Text);
+
+            this.txtNomCampañaMod.Text = mCampañaMod.Nombre;
+            this.nUDuracionMod.Value = mCampañaMod.DuracionImagen;
+            this.dTPickFechaDesdeMod.Value = mCampañaMod.FechaInicio;
+            this.dTPickFechaHastaMod.Value = mCampañaMod.FechaFin;
+            this.nUpDesdeHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraInicio.Hours);
+            this.nUpHastaHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraFin.Hours);
+            this.CargarImagenEnLosPictureBox(lista);
+        }
+
+        /// <summary>
+        /// Elimina cada imagen en la posición del picture box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// 
+
+        private void btnEliminarMod1_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox11);
+
+        }
+
+        private void btnEliminarMod2_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox12);
+        }
+
+        private void btnEliminarMod3_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox13);
+        }
+
+        private void btnEliminarMod4_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox14);
+        }
+
+        private void btnEliminarMod5_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox15);
+        }
+
+        private void btnEliminarMod6_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox16);
+        }
+
+        private void btnEliminarMod7_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox17);
+        }
+
+        private void btnEliminarMod8_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox18);
+        }
+
+        private void btnEliminarMod9_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox19);
+        }
+
+        private void btnEliminarMod10_Click(object sender, EventArgs e)
+        {
+            this.ElimarImagen(this.pictureBox20);
         }
     }
 }

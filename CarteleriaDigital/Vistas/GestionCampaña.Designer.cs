@@ -48,13 +48,41 @@
             this.lblNomAgregarCamp = new System.Windows.Forms.Label();
             this.BtnVolverCampaña = new System.Windows.Forms.Button();
             this.gBoxImagenes = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.tbControlModificar = new System.Windows.Forms.TabPage();
+            this.gBoxImagenMod = new System.Windows.Forms.GroupBox();
+            this.btnEliminarMod2 = new System.Windows.Forms.Button();
+            this.btnEliminarMod1 = new System.Windows.Forms.Button();
+            this.btnEliminarMod10 = new System.Windows.Forms.Button();
+            this.btnEliminarMod9 = new System.Windows.Forms.Button();
+            this.btnEliminarMod8 = new System.Windows.Forms.Button();
+            this.btnEliminarMod7 = new System.Windows.Forms.Button();
+            this.btnEliminarMod6 = new System.Windows.Forms.Button();
+            this.btnEliminarMod5 = new System.Windows.Forms.Button();
+            this.btnEliminarMod4 = new System.Windows.Forms.Button();
+            this.btnEliminarMod3 = new System.Windows.Forms.Button();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.btnModEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnModVolver = new System.Windows.Forms.Button();
-            this.gBoxImagenMod = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.gBoxCampañaMod = new System.Windows.Forms.GroupBox();
             this.CargarImagMod = new System.Windows.Forms.Button();
             this.nUDuracionMod = new System.Windows.Forms.NumericUpDown();
@@ -79,8 +107,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDuracionAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraAgregar)).BeginInit();
+            this.gBoxImagenes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.tbControlModificar.SuspendLayout();
             this.gBoxImagenMod.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.gBoxCampañaMod.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDuracionMod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraMod)).BeginInit();
@@ -339,6 +388,16 @@
             // gBoxImagenes
             // 
             this.gBoxImagenes.BackColor = System.Drawing.Color.Silver;
+            this.gBoxImagenes.Controls.Add(this.pictureBox1);
+            this.gBoxImagenes.Controls.Add(this.pictureBox2);
+            this.gBoxImagenes.Controls.Add(this.pictureBox3);
+            this.gBoxImagenes.Controls.Add(this.pictureBox4);
+            this.gBoxImagenes.Controls.Add(this.pictureBox5);
+            this.gBoxImagenes.Controls.Add(this.pictureBox6);
+            this.gBoxImagenes.Controls.Add(this.pictureBox7);
+            this.gBoxImagenes.Controls.Add(this.pictureBox8);
+            this.gBoxImagenes.Controls.Add(this.pictureBox9);
+            this.gBoxImagenes.Controls.Add(this.pictureBox10);
             this.gBoxImagenes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.gBoxImagenes.Location = new System.Drawing.Point(10, 188);
             this.gBoxImagenes.Name = "gBoxImagenes";
@@ -347,13 +406,93 @@
             this.gBoxImagenes.TabStop = false;
             this.gBoxImagenes.Text = "Imágenes a visualizar";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(24, 55);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(217, 55);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(422, 55);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(621, 55);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(820, 55);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(25, 259);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox6.TabIndex = 4;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(217, 259);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(422, 259);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(621, 259);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox9.TabIndex = 1;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(820, 259);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox10.TabIndex = 0;
+            this.pictureBox10.TabStop = false;
+            // 
             // tbControlModificar
             // 
             this.tbControlModificar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.tbControlModificar.Controls.Add(this.gBoxImagenMod);
             this.tbControlModificar.Controls.Add(this.btnModEliminar);
             this.tbControlModificar.Controls.Add(this.btnModificar);
             this.tbControlModificar.Controls.Add(this.btnModVolver);
-            this.tbControlModificar.Controls.Add(this.gBoxImagenMod);
             this.tbControlModificar.Controls.Add(this.gBoxCampañaMod);
             this.tbControlModificar.Location = new System.Drawing.Point(4, 29);
             this.tbControlModificar.Name = "tbControlModificar";
@@ -361,6 +500,237 @@
             this.tbControlModificar.Size = new System.Drawing.Size(1030, 727);
             this.tbControlModificar.TabIndex = 1;
             this.tbControlModificar.Text = "Modificar";
+            // 
+            // gBoxImagenMod
+            // 
+            this.gBoxImagenMod.BackColor = System.Drawing.Color.Silver;
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod2);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod1);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod10);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod9);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod8);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod7);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod6);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod5);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod4);
+            this.gBoxImagenMod.Controls.Add(this.btnEliminarMod3);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox11);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox12);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox13);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox14);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox15);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox16);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox17);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox18);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox19);
+            this.gBoxImagenMod.Controls.Add(this.pictureBox20);
+            this.gBoxImagenMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
+            this.gBoxImagenMod.Location = new System.Drawing.Point(6, 187);
+            this.gBoxImagenMod.Name = "gBoxImagenMod";
+            this.gBoxImagenMod.Size = new System.Drawing.Size(1008, 467);
+            this.gBoxImagenMod.TabIndex = 25;
+            this.gBoxImagenMod.TabStop = false;
+            this.gBoxImagenMod.Text = "Imágenes a visualizar";
+            // 
+            // btnEliminarMod2
+            // 
+            this.btnEliminarMod2.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod2.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod2.Location = new System.Drawing.Point(216, 211);
+            this.btnEliminarMod2.Name = "btnEliminarMod2";
+            this.btnEliminarMod2.Size = new System.Drawing.Size(151, 33);
+            this.btnEliminarMod2.TabIndex = 20;
+            this.btnEliminarMod2.Text = "Eliminar";
+            this.btnEliminarMod2.UseVisualStyleBackColor = false;
+            this.btnEliminarMod2.Click += new System.EventHandler(this.btnEliminarMod2_Click);
+            // 
+            // btnEliminarMod1
+            // 
+            this.btnEliminarMod1.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod1.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod1.Location = new System.Drawing.Point(23, 211);
+            this.btnEliminarMod1.Name = "btnEliminarMod1";
+            this.btnEliminarMod1.Size = new System.Drawing.Size(151, 33);
+            this.btnEliminarMod1.TabIndex = 10;
+            this.btnEliminarMod1.Text = "Eliminar";
+            this.btnEliminarMod1.UseVisualStyleBackColor = false;
+            this.btnEliminarMod1.Click += new System.EventHandler(this.btnEliminarMod1_Click);
+            // 
+            // btnEliminarMod10
+            // 
+            this.btnEliminarMod10.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod10.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod10.Location = new System.Drawing.Point(820, 415);
+            this.btnEliminarMod10.Name = "btnEliminarMod10";
+            this.btnEliminarMod10.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod10.TabIndex = 19;
+            this.btnEliminarMod10.Text = "Eliminar";
+            this.btnEliminarMod10.UseVisualStyleBackColor = false;
+            this.btnEliminarMod10.Click += new System.EventHandler(this.btnEliminarMod10_Click);
+            // 
+            // btnEliminarMod9
+            // 
+            this.btnEliminarMod9.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod9.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod9.Location = new System.Drawing.Point(621, 415);
+            this.btnEliminarMod9.Name = "btnEliminarMod9";
+            this.btnEliminarMod9.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod9.TabIndex = 18;
+            this.btnEliminarMod9.Text = "Eliminar";
+            this.btnEliminarMod9.UseVisualStyleBackColor = false;
+            this.btnEliminarMod9.Click += new System.EventHandler(this.btnEliminarMod9_Click);
+            // 
+            // btnEliminarMod8
+            // 
+            this.btnEliminarMod8.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod8.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod8.Location = new System.Drawing.Point(422, 415);
+            this.btnEliminarMod8.Name = "btnEliminarMod8";
+            this.btnEliminarMod8.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod8.TabIndex = 17;
+            this.btnEliminarMod8.Text = "Eliminar";
+            this.btnEliminarMod8.UseVisualStyleBackColor = false;
+            this.btnEliminarMod8.Click += new System.EventHandler(this.btnEliminarMod8_Click);
+            // 
+            // btnEliminarMod7
+            // 
+            this.btnEliminarMod7.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod7.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod7.Location = new System.Drawing.Point(216, 415);
+            this.btnEliminarMod7.Name = "btnEliminarMod7";
+            this.btnEliminarMod7.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod7.TabIndex = 16;
+            this.btnEliminarMod7.Text = "Eliminar";
+            this.btnEliminarMod7.UseVisualStyleBackColor = false;
+            this.btnEliminarMod7.Click += new System.EventHandler(this.btnEliminarMod7_Click);
+            // 
+            // btnEliminarMod6
+            // 
+            this.btnEliminarMod6.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod6.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod6.Location = new System.Drawing.Point(24, 415);
+            this.btnEliminarMod6.Name = "btnEliminarMod6";
+            this.btnEliminarMod6.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod6.TabIndex = 15;
+            this.btnEliminarMod6.Text = "Eliminar";
+            this.btnEliminarMod6.UseVisualStyleBackColor = false;
+            this.btnEliminarMod6.Click += new System.EventHandler(this.btnEliminarMod6_Click);
+            // 
+            // btnEliminarMod5
+            // 
+            this.btnEliminarMod5.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod5.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod5.Location = new System.Drawing.Point(820, 210);
+            this.btnEliminarMod5.Name = "btnEliminarMod5";
+            this.btnEliminarMod5.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod5.TabIndex = 14;
+            this.btnEliminarMod5.Text = "Eliminar";
+            this.btnEliminarMod5.UseVisualStyleBackColor = false;
+            this.btnEliminarMod5.Click += new System.EventHandler(this.btnEliminarMod5_Click);
+            // 
+            // btnEliminarMod4
+            // 
+            this.btnEliminarMod4.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod4.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod4.Location = new System.Drawing.Point(621, 210);
+            this.btnEliminarMod4.Name = "btnEliminarMod4";
+            this.btnEliminarMod4.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod4.TabIndex = 13;
+            this.btnEliminarMod4.Text = "Eliminar";
+            this.btnEliminarMod4.UseVisualStyleBackColor = false;
+            this.btnEliminarMod4.Click += new System.EventHandler(this.btnEliminarMod4_Click);
+            // 
+            // btnEliminarMod3
+            // 
+            this.btnEliminarMod3.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminarMod3.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminarMod3.Location = new System.Drawing.Point(422, 210);
+            this.btnEliminarMod3.Name = "btnEliminarMod3";
+            this.btnEliminarMod3.Size = new System.Drawing.Size(150, 34);
+            this.btnEliminarMod3.TabIndex = 12;
+            this.btnEliminarMod3.Text = "Eliminar";
+            this.btnEliminarMod3.UseVisualStyleBackColor = false;
+            this.btnEliminarMod3.Click += new System.EventHandler(this.btnEliminarMod3_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Location = new System.Drawing.Point(24, 55);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox11.TabIndex = 9;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Location = new System.Drawing.Point(217, 55);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox12.TabIndex = 8;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Location = new System.Drawing.Point(422, 55);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox13.TabIndex = 7;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Location = new System.Drawing.Point(621, 55);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox14.TabIndex = 6;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Location = new System.Drawing.Point(820, 55);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox15.TabIndex = 5;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Location = new System.Drawing.Point(25, 259);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox16.TabIndex = 4;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Location = new System.Drawing.Point(217, 259);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox17.TabIndex = 3;
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Location = new System.Drawing.Point(422, 259);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox18.TabIndex = 2;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Location = new System.Drawing.Point(621, 259);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox19.TabIndex = 1;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Location = new System.Drawing.Point(820, 259);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(150, 150);
+            this.pictureBox20.TabIndex = 0;
+            this.pictureBox20.TabStop = false;
             // 
             // btnModEliminar
             // 
@@ -397,37 +767,6 @@
             this.btnModVolver.Text = "Volver";
             this.btnModVolver.UseVisualStyleBackColor = false;
             this.btnModVolver.Click += new System.EventHandler(this.BtnModVolver_Click);
-            // 
-            // gBoxImagenMod
-            // 
-            this.gBoxImagenMod.BackColor = System.Drawing.Color.Silver;
-            this.gBoxImagenMod.Controls.Add(this.button1);
-            this.gBoxImagenMod.Controls.Add(this.button2);
-            this.gBoxImagenMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
-            this.gBoxImagenMod.Location = new System.Drawing.Point(9, 187);
-            this.gBoxImagenMod.Name = "gBoxImagenMod";
-            this.gBoxImagenMod.Size = new System.Drawing.Size(1008, 467);
-            this.gBoxImagenMod.TabIndex = 4;
-            this.gBoxImagenMod.TabStop = false;
-            this.gBoxImagenMod.Text = "Imágenes a visualizar";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(307, 473);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 50);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(615, 473);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 50);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // gBoxCampañaMod
             // 
@@ -664,8 +1003,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDuracionAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpHastaHoraAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDesdeHoraAgregar)).EndInit();
+            this.gBoxImagenes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.tbControlModificar.ResumeLayout(false);
             this.gBoxImagenMod.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.gBoxCampañaMod.ResumeLayout(false);
             this.gBoxCampañaMod.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUDuracionMod)).EndInit();
@@ -699,9 +1059,6 @@
     private System.Windows.Forms.Button btnAceptarCampaña;
     private System.Windows.Forms.GroupBox gBoxImagenes;
     private System.Windows.Forms.Button BtnVolverCampaña;
-    private System.Windows.Forms.GroupBox gBoxImagenMod;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.Button button2;
     private System.Windows.Forms.GroupBox gBoxCampañaMod;
     private System.Windows.Forms.NumericUpDown nUDuracionMod;
     private System.Windows.Forms.Label label2;
@@ -723,5 +1080,36 @@
     private System.Windows.Forms.Button btnModificar;
     private System.Windows.Forms.Button btnModVolver;
     private System.Windows.Forms.Button CargarImagMod;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.GroupBox gBoxImagenMod;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.Button btnEliminarMod10;
+        private System.Windows.Forms.Button btnEliminarMod9;
+        private System.Windows.Forms.Button btnEliminarMod8;
+        private System.Windows.Forms.Button btnEliminarMod7;
+        private System.Windows.Forms.Button btnEliminarMod6;
+        private System.Windows.Forms.Button btnEliminarMod5;
+        private System.Windows.Forms.Button btnEliminarMod4;
+        private System.Windows.Forms.Button btnEliminarMod3;
+        private System.Windows.Forms.Button btnEliminarMod1;
+        private System.Windows.Forms.Button btnEliminarMod2;
     }
 }

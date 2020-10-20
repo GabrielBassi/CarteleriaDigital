@@ -61,7 +61,7 @@
     <Compile Include="Controladores\ControladorImagen.cs" />
     <Compile Include="Controladores\ControladorRssUrl.cs" />
     <Compile Include="Controladores\ControladorTextoFijo.cs" />
-    <Compile Include="Control\Controles.cs" />
+    <Compile Include="Controless\Controles.cs" />
     <Compile Include="DAL\EntityFramework\CarteleriaDigitalContext.cs" />
     <Compile Include="DAL\IRepositorioEstrategiaTipoDatosFuente.cs" />
     <Compile Include="DAL\EntityFramework\RepositorioBanner.cs" />
@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202010130114038_v1.0.cs" />
     <Compile Include="Migrations\202010130114038_v1.0.designer.cs">
       <DependentUpon>202010130114038_v1.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010171850037_fredyMigration.cs" />
+    <Compile Include="Migrations\202010171850037_fredyMigration.designer.cs">
+      <DependentUpon>202010171850037_fredyMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\EstrategiaTipoDatosFuente.cs" />
@@ -122,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Migrations\202010130114038_v1.0.resx">
       <DependentUpon>202010130114038_v1.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010171850037_fredyMigration.resx">
+      <DependentUpon>202010171850037_fredyMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
