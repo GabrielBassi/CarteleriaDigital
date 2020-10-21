@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using CarteleriaDigital.Modelo;
 using CarteleriaDigital.DAL.EntityFramework;
 using System.Windows.Forms;
-using CarteleriaDigital.Excepciones;
 
 namespace CarteleriaDigital.Controladores
 {
@@ -14,13 +10,11 @@ namespace CarteleriaDigital.Controladores
     {
         private readonly UnidadDeTrabajo iUdT;
         private ControladorImagen iControladorImagen;
-        int aa = 20;
-        int jj = 35;
 
         public ControladorCampaña(UnidadDeTrabajo pUnidadDeTrabajo)
         {
             this.iUdT = pUnidadDeTrabajo;
-            iControladorImagen = new ControladorImagen(iUdT,1,1);
+            iControladorImagen = new ControladorImagen(iUdT/*, 1, 1*/);
 
         }
         /// <summary>
@@ -45,17 +39,10 @@ namespace CarteleriaDigital.Controladores
                 HoraInicio = pHoraInicio,
                 HoraFin = pHoraFin,
                 DuracionImagen = pDuracion,
-                //ListaImagenes = pListaImagen,
                 ListaImagenes=pListaImagen,
             };
 
             iUdT.RepositorioCampaña.Agregar(iCampaña);
-            iUdT.Guardar();
-        }
-
-        public void AgregarCampaña(Campaña pCampaña)
-        {
-            this.iUdT.RepositorioCampaña.Modificar(pCampaña);
             iUdT.Guardar();
         }
 
@@ -136,41 +123,6 @@ namespace CarteleriaDigital.Controladores
                 pCombo.Items.Add(item.Nombre);
             }
         }
-        public Campaña BuscarCampaña(int pId)
-        {
-            Campaña iCampaña = iUdT.RepositorioCampaña.Obtener(pId);
-            return iCampaña;
-        }
-
-        /// <summary>
-        /// Carga una campaña ya cargada previamente para poder realizar modificaciones
-        /// </summary>
-        /// <param name="mCampañaMod"></param>
-        /// <param name="txtNomCampañaMod"></param>
-        /// <param name="nUDuracionMod"></param>
-        /// <param name="dTPickFechaDesdeMod"></param>
-        /// <param name="dTPickFechaHastaMod"></param>
-        /// <param name="nUpDesdeHoraMod"></param>
-        /// <param name="nUpHastaHoraMod"></param>
-        /// <param name="gBoxCampañaMod"></param>
-        public void CargarCampañaModificar(Campaña mCampañaMod, TextBox txtNomCampañaMod, NumericUpDown nUDuracionMod, DateTimePicker dTPickFechaDesdeMod, DateTimePicker dTPickFechaHastaMod, NumericUpDown nUpDesdeHoraMod, NumericUpDown nUpHastaHoraMod, GroupBox gBoxCampañaMod)
-        {
-
-            //txtNomCampañaMod.Text = mCampañaMod.Nombre;
-            //nUDuracionMod.Value = mCampañaMod.DuracionImagen;
-            //dTPickFechaDesdeMod.Value = mCampañaMod.FechaInicio;
-            //dTPickFechaHastaMod.Value = mCampañaMod.FechaFin;
-            //nUpDesdeHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraInicio.Hours);
-            //nUpHastaHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraFin.Hours);
-
-            //iControladorImagen.CargoPictureBoxModificar(iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId), gBoxCampañaMod, 20, 35);
-        }
-
-        public IList<Campaña> BuscarCampañaActivosHoy()
-        {
-            IList<Campaña> listaCAmpañas = iUdT.RepositorioCampaña.BuscarCampañaActivos();
-            return listaCAmpañas;
-        }
 
         internal IList<Campaña> BuscarCampañaActivosHoyPorRango()
         {
@@ -178,4 +130,29 @@ namespace CarteleriaDigital.Controladores
             return listaCAmpañasRango;
         }
     }
+    //public Campaña BuscarCampaña(int pId)
+    //{
+    //    Campaña iCampaña = iUdT.RepositorioCampaña.Obtener(pId);
+    //    return iCampaña;
+    //}
+
+    //public void CargarCampañaModificar(Campaña mCampañaMod, TextBox txtNomCampañaMod, NumericUpDown nUDuracionMod, DateTimePicker dTPickFechaDesdeMod, DateTimePicker dTPickFechaHastaMod, NumericUpDown nUpDesdeHoraMod, NumericUpDown nUpHastaHoraMod, GroupBox gBoxCampañaMod)
+    //{
+
+    //    //txtNomCampañaMod.Text = mCampañaMod.Nombre;
+    //    //nUDuracionMod.Value = mCampañaMod.DuracionImagen;
+    //    //dTPickFechaDesdeMod.Value = mCampañaMod.FechaInicio;
+    //    //dTPickFechaHastaMod.Value = mCampañaMod.FechaFin;
+    //    //nUpDesdeHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraInicio.Hours);
+    //    //nUpHastaHoraMod.Value = Convert.ToDecimal(mCampañaMod.HoraFin.Hours);
+
+    //    //iControladorImagen.CargoPictureBoxModificar(iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId), gBoxCampañaMod, 20, 35);
+    //}
+
+    //public IList<Campaña> BuscarCampañaActivosHoy()
+    //{
+    //    IList<Campaña> listaCAmpañas = iUdT.RepositorioCampaña.BuscarCampañaActivos();
+    //    return listaCAmpañas;
+    //}
+
 }

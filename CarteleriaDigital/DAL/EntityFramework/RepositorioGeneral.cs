@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarteleriaDigital.Excepciones;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -24,8 +25,9 @@ namespace CarteleriaDigital.DAL.EntityFramework
         /// <param name="pEntity">objeto a agregar</param>
         public void Agregar(TEntity pEntity)
         {
-            this.iDbContext.Set<TEntity>().Add(pEntity);
+                this.iDbContext.Set<TEntity>().Add(pEntity);
         }
+    
         /// <summary>
         /// Elimina un objeto del repositorio
         /// </summary>

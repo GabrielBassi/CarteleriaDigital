@@ -11,9 +11,6 @@ namespace CarteleriaDigital.DAL
     {
         IList<Imagen> ObtenerTodasLasImagensDeLaCampaña(int pidCampaña);
         void EliminarPorNombre(string pNombre);
-
-       
-
     }
 
 }

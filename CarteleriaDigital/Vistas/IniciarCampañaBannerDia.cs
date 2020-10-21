@@ -28,7 +28,7 @@ namespace CarteleriaDigital.Vistas
             iControladorBanner = new ControladorBanner(UnidadDeTrabajo.Instancia);
             iControladorCampaña = new ControladorCampaña(UnidadDeTrabajo.Instancia);
             iControladorTextoFijo = new ControladorTextoFijo(UnidadDeTrabajo.Instancia);
-            iControladorImagen= new ControladorImagen(UnidadDeTrabajo.Instancia,1,1);
+            iControladorImagen= new ControladorImagen(UnidadDeTrabajo.Instancia/*,1,1*/);
             iControladorRSS = new ControladorFuenteRss(UnidadDeTrabajo.Instancia);
         }
 
@@ -120,6 +120,5 @@ namespace CarteleriaDigital.Vistas
                 pBoxCampañas.Image = Image.FromFile(ruta+"\\publicite.jpg");
             }
         }
-
     }
 }

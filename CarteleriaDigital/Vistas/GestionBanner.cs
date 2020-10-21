@@ -48,7 +48,7 @@ namespace CarteleriaDigital.Vistas
                         throw new ExisteNombre("Ya existe un Banner con ese nombre");
                     }
                 }
-              
+
                 DateTime pFechaInicio = new DateTime(this.dTPickFechaDesdeBan.Value.Year, this.dTPickFechaDesdeBan.Value.Month, this.dTPickFechaDesdeBan.Value.Day, Convert.ToInt32(this.nUpDesdeHoraAgregarBan.Text), 0, 0);
                 DateTime pFechaFin = new DateTime(this.dTPickFechaHastaBan.Value.Year, this.dTPickFechaHastaBan.Value.Month, this.dTPickFechaHastaBan.Value.Day, Convert.ToInt32(this.nUpHastaHoraAgregarBan.Text), 0, 0);
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
@@ -149,7 +149,6 @@ namespace CarteleriaDigital.Vistas
             if (tabCtrlBanner.SelectedIndex == 0)
             {
                 LimpiarPantallaAlta();
-              //  iControladorBanner.CargarBannerActivasComboBox(cboxBuscarBannerMod);
             }
             else if (tabCtrlBanner.SelectedIndex == 1)
             {

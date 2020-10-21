@@ -10,10 +10,10 @@ namespace CarteleriaDigital.Controladores
     class ControladorImagen
     {
         private readonly IUnidadDeTrabajo iUdT;
-        int contador = 0;
-        int aa = 0;
-        //int jj = 0;
-        public ControladorImagen(IUnidadDeTrabajo pUnidadDeTrabajo, int pp, int aa)
+        //int contador = 0;
+        //int aa = 0;
+        ////int jj = 0;
+        public ControladorImagen(IUnidadDeTrabajo pUnidadDeTrabajo/*, int pp, int aa*/)
         {
             this.iUdT = pUnidadDeTrabajo;
             //aa = pAa;

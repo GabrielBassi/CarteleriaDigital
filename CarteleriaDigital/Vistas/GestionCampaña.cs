@@ -18,13 +18,12 @@ namespace CarteleriaDigital.Vistas
         Campaña mCampañaMod;
         Controles iControl;
         IList<Imagen> listaImagenes = new List<Imagen>();
-        bool control = false;
 
         public GestionCampaña()
         {
             InitializeComponent();
             iControladorCampaña = new ControladorCampaña(UnidadDeTrabajo.Instancia);
-            iControladorImagen = new ControladorImagen(UnidadDeTrabajo.Instancia,1,1);
+            iControladorImagen = new ControladorImagen(UnidadDeTrabajo.Instancia/*,1,1*/);
             iControl = new Controles();
 
         }
@@ -63,6 +62,7 @@ namespace CarteleriaDigital.Vistas
                     throw new FaltanDatosObligatorios("Faltar Cargar Imágenes a la Campaña");
                 }
                 iControladorCampaña.AgregarCampaña(txBoxNombreAgregarCamp.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionAgregar.Text), listaImagenes);
+                
                 MessageBox.Show("La campaña se registro con exito", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarPantallaAlta();
 
@@ -289,14 +289,14 @@ namespace CarteleriaDigital.Vistas
                 iControl.ValidarFecha(pFechaInicio, pFechaFin);
                 iControl.ValidarHora(pHoraInicio, pHoraFin);
                 iControl.ValidarRangoHora(pHoraInicio, pHoraFin);
-                if (control == false)
-                {
+                //if (control == false)
+                //{
                     iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text),this.listaImagenes);
-                }
-                else
-                {
-                    iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId));
-                }
+                ////}
+                //else
+                //{
+                //    iControladorCampaña.ModificarCampaña(mCampañaMod, txtNomCampañaMod.Text, pFechaInicio, pFechaFin, pFechaInicio.TimeOfDay, pFechaFin.TimeOfDay, Convert.ToInt32(nUDuracionMod.Text), iControladorImagen.ListaImagensPorCampañaId(mCampañaMod.CampañaId));
+                //}
 
                 MessageBox.Show("La campaña se modifico correctamente", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarPantallaMod();
@@ -360,9 +360,6 @@ namespace CarteleriaDigital.Vistas
         /// <summary>
         /// Elimina cada imagen en la posición del picture box.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// 
 
         private void btnEliminarMod1_Click(object sender, EventArgs e)
         {
